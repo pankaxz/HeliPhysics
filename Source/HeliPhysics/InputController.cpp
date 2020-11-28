@@ -14,25 +14,29 @@ UInputController::UInputController()
 }
 
 
-// Called when the game starts
 void UInputController::BeginPlay()
 {
 	Super::BeginPlay();
-
-	// ...
-	
 }
 
-
-// Called every frame
 void UInputController::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
-	// ...
+	// =>WARNING : Setting this on tick to check for the change in enum
+	FSetInputType(this->InputType);
 }
 
-void UInputController::SetInputType(EInputType Type)
+void UInputController::FSetInputType(EInputType InputDeviceType)
 {
-	
+	if(InputDeviceType == Keyboard)
+	{
+		bUseKeyboardInput = true;
+		bUseXboxInput = false;
+	}
+	else
+	{
+		bUseKeyboardInput = false;
+		bUseXboxInput = true;
+	}
 }

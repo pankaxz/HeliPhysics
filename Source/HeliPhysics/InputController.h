@@ -9,8 +9,8 @@
 UENUM(BlueprintType)
 enum EInputType
 {
-	Keyboard UMETA(DisplayName = "Keyboard"),
-	Xbox UMETA(DisplayName = "XBOX Controller")
+	Keyboard 	UMETA(DisplayName = "Keyboard"),
+	Xbox 		UMETA(DisplayName = "XBOX Controller")
 };
 
 
@@ -18,21 +18,30 @@ UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class HELIPHYSICS_API UInputController : public UActorComponent
 {
 	GENERATED_BODY()
-
+	
+	UFUNCTION(BlueprintCallable)
+    void FSetInputType(EInputType InputDeviceType);
+	
 public:	
 	// Sets default values for this component's properties
 	UInputController();
 
+
+	UPROPERTY(BlueprintReadOnly)
+	bool bUseKeyboardInput;
+
+	UPROPERTY(BlueprintReadOnly)
+	bool bUseXboxInput;
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = EInputType)
-	TEnumAsByte<EInputType> InputType;
 
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-	void SetInputType(EInputType Type);
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InputType")
+	TEnumAsByte<EInputType> InputType;
 };
 

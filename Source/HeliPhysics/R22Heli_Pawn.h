@@ -7,6 +7,8 @@
 #include "R22Heli_Pawn.generated.h"
 
 class UCapsuleComponent;
+class UInputController;
+
 UCLASS()
 class HELIPHYSICS_API AR22Heli_Pawn : public APawn
 {
@@ -23,6 +25,8 @@ public:
 	float GetPedalInput();
 	float GetCollectiveInput();
 	FVector2D GetCyclicInput();
+	
+	
 
 protected:
 	// Called when the game starts or when spawned
@@ -49,7 +53,13 @@ protected:
     UPROPERTY(EditDefaultsOnly)
     UCapsuleComponent* Col_Fuselage;
 
-
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UInputController* InputControllerVar;
+	
+	//Input Controller Var
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<UInputController> InputControllerComponent;
+	
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -90,6 +100,5 @@ private:
 	// Cyclic input - Y = Vertical Input			
 	UPROPERTY(VisibleAnywhere, Category = "InputTest")
 	FVector2D CyclicInput = FVector2D().ZeroVector;
-		
 
 };

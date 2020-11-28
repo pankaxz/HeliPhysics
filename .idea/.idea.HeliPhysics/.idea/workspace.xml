@@ -24,13 +24,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="741f8425-4cc2-4f16-a1f1-e2ea537af92b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/HeliPhysics/InputController.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/HeliPhysics/InputController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HeliPhysics.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultInput.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultInput.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/BP_R22Heli_Pawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/BP_R22Heli_Pawn.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/BP_R22Heli_PawnBackup.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/BP_R22Heli_PawnBackup.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/HP_Test/Maps/TestMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Test/Maps/TestMap.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/InputController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/InputController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/InputController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/InputController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,13 +43,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" />
-        <option value="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" />
-        <option value="$PROJECT_DIR$/Source/HeliPhysics/InputController.cpp" />
         <option value="$PROJECT_DIR$/Source/HeliPhysics/InputController.h" />
+        <option value="$PROJECT_DIR$/Source/HeliPhysics/InputController.cpp" />
+        <option value="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" />
+        <option value="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" />
       </list>
     </option>
   </component>
@@ -60,6 +66,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="CodeCleanupOptionsPage" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="C++ Project.HeliPhysics">
@@ -387,7 +394,8 @@
       <workItem from="1606425593635" duration="607000" />
       <workItem from="1606491212596" duration="1363000" />
       <workItem from="1606500699062" duration="7455000" />
-      <workItem from="1606575849619" duration="1291000" />
+      <workItem from="1606575849619" duration="1953000" />
+      <workItem from="1606585826952" duration="15165000" />
     </task>
     <servers />
   </component>
@@ -410,21 +418,33 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1606513274687">
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1606589569431">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606513274687" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1606513274687">
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606589569431" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1606589569431">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606513274687" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1606513274686">
+    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606589569431" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1606589569430">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606513274686" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1606513274687">
+    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606589569430" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1606589569431">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606513274687" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606589569431" />
+    <state x="922" y="148" key="SettingsEditor" timestamp="1606600783347">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="922" y="148" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606600783347" />
+    <state x="616" y="243" key="run.anything.popup" timestamp="1606595936395">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606595936395" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1606600634523">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606600634523" />
   </component>
 </project>
