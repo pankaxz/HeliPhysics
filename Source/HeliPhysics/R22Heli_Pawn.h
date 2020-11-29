@@ -32,7 +32,7 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	
-    UPROPERTY(EditDefaultsOnly, Category="HeliPawn")
+    UPROPERTY(EditAnywhere,BlueprintReadOnly, Category="HeliPawn")
     UStaticMeshComponent* SM_RootBody;
     
     UPROPERTY()

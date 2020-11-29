@@ -6,7 +6,7 @@
 #include "Components/ActorComponent.h"
 #include "PawnController.generated.h"
 
-
+class AR22Heli_Pawn;
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class HELIPHYSICS_API UPawnController : public UActorComponent
 {
@@ -22,12 +22,17 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pawn Controller")
 	FVector MovemmentDirection = FVector(0.0f,0.0f,0.0f);
-	
+
+
+	UFUNCTION()
+	virtual void HandlePhysics();
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-	virtual void HandlePhysics();
+	AR22Heli_Pawn* R22HeliPawn;
+
+
 
 public:	
 	// Called every frame
