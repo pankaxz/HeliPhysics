@@ -24,19 +24,20 @@ void UInputController::TickComponent(float DeltaTime, ELevelTick TickType, FActo
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
 	// =>WARNING : Setting this on tick to check for the change in enum
-	FSetInputType(this->InputType);
+	// FSetInputType(this->InputType);
 }
-
-void UInputController::FSetInputType(EInputType InputDeviceType)
-{
-	if(InputDeviceType == Keyboard)
-	{
-		bUseKeyboardInput = true;
-		bUseXboxInput = false;
-	}
-	else
-	{
-		bUseKeyboardInput = false;
-		bUseXboxInput = true;
-	}
-}
+//
+// void UInputController::FSetInputType(EInputType InputDeviceType)
+// {
+// 	
+// 	if(InputDeviceType == Keyboard)
+// 	{
+// 		bUseKeyboardInput = true;
+// 		bUseXboxInput = false;
+// 	}
+// 	else
+// 	{
+// 		bUseKeyboardInput = false;
+// 		bUseXboxInput = true;
+// 	}
+// }

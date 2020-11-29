@@ -16,6 +16,7 @@
       <e p="Engine" t="Include" />
       <e p="Games" t="Include" />
       <e p="HeliPhysics.sln" t="IncludeFlat" />
+      <e p="HeliPhysics.sln.DotSettings.user" t="Include" />
       <e p="HeliPhysics.uproject" t="Include" />
       <e p="Intermediate\Build\Unused" t="ExcludeRecursive" />
       <e p="Intermediate\ProjectFiles" t="IncludeRecursive">
@@ -32,6 +33,10 @@
           <e p="HeliPhysicsGameModeBase.h" t="Include" />
           <e p="InputController.cpp" t="Include" />
           <e p="InputController.h" t="Include" />
+          <e p="KeyboardInputComponent.cpp" t="Include" />
+          <e p="KeyboardInputComponent.h" t="Include" />
+          <e p="PawnController.cpp" t="Include" />
+          <e p="PawnController.h" t="Include" />
           <e p="R22Heli_Pawn.cpp" t="Include" />
           <e p="R22Heli_Pawn.h" t="Include" />
         </e>

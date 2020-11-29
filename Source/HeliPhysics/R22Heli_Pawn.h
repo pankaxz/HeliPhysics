@@ -8,7 +8,7 @@
 
 class UCapsuleComponent;
 class UInputController;
-
+class UPawnController;
 UCLASS()
 class HELIPHYSICS_API AR22Heli_Pawn : public APawn
 {
@@ -56,9 +56,13 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	UInputController* InputControllerVar;
 	
-	//Input Controller Var
+	// //Input Controller Var
+	// UPROPERTY(EditDefaultsOnly)
+	// TSubclassOf<UInputController> InputControllerComponent;
+
+	//Pawn controlelr
 	UPROPERTY(EditDefaultsOnly)
-	TSubclassOf<UInputController> InputControllerComponent;
+	UPawnController* PawnControllerVar;
 	
 public:	
 	// Called every frame

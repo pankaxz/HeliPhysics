@@ -2,7 +2,8 @@
 
 
 #include "R22Heli_Pawn.h"
-#include "InputController.h"
+// #include "InputController.h"
+#include "PawnController.h"
 #include "Components/CapsuleComponent.h"
 
 // Sets default values
@@ -66,27 +67,30 @@ AR22Heli_Pawn::AR22Heli_Pawn()
 	Col_RSkid->SetCollisionObjectType(ECollisionChannel::ECC_Vehicle);
 	Col_RSkid->SetCollisionResponseToAllChannels(ECR_Block);
 
-	InputControllerVar = CreateDefaultSubobject<UInputController>(TEXT("Input Contoroller"));
-	AddOwnedComponent(InputControllerVar);
+	// Take control of the default player
+	AutoPossessPlayer = EAutoReceiveInput::Player0;
+
+	//
+	// InputControllerVar = CreateDefaultSubobject<UInputController>(TEXT("Input Contoroller"));
+	// AddOwnedComponent(InputControllerVar);
+	// InputControllerVar->UpdatedComponent = RootComponent;
+
+	PawnControllerVar = CreateDefaultSubobject<UPawnController>(TEXT("Pawn Contoroller"));
+	AddOwnedComponent(PawnControllerVar);
 }
 
 // Called when the game starts or when spawned
 void AR22Heli_Pawn::BeginPlay()
 {
 	Super::BeginPlay();
+	
 }
 
 // Called every frame
 void AR22Heli_Pawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	
-	if(InputControllerVar != nullptr)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Use Keyboard: %u"), InputControllerVar->bUseKeyboardInput);
-		UE_LOG(LogTemp, Warning, TEXT("Use Xbox: %u"), InputControllerVar->bUseXboxInput);
-		UE_LOG(LogTemp, Warning, TEXT("===================================="));
-	}
+	// UE_LOG(LogTemp, Warning, TEXT("Use Keyboard: %u"), InputControllerVar->bUseKeyboardInput);
 	
 }
 
@@ -95,26 +99,12 @@ void AR22Heli_Pawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	//Keyboard
-	if(InputControllerVar->bUseKeyboardInput)
-	{
 		PlayerInputComponent->BindAxis(TEXT("Horizontal"), this, &AR22Heli_Pawn::SetHorizontalInput);
 		PlayerInputComponent->BindAxis(TEXT("Vertical"), this, &AR22Heli_Pawn::SetVerticalInput);
 		PlayerInputComponent->BindAxis(TEXT("Throttle"), this, &AR22Heli_Pawn::SetThrottleInput);
 		PlayerInputComponent->BindAxis(TEXT("Collective"), this, &AR22Heli_Pawn::SetCollectiveInput);
 		PlayerInputComponent->BindAxis(TEXT("Pedal"), this, &AR22Heli_Pawn::SetPedalInput);
-	}
 	
-	//XBOX CONTROLLER
-	else
-	if(InputControllerVar->bUseXboxInput)
-	{
-		PlayerInputComponent->BindAxis(TEXT("XBOXCyclicVertical"), this, &AR22Heli_Pawn::SetVerticalInput);
-		PlayerInputComponent->BindAxis(TEXT("XBOXCyclicHorizontal"), this, &AR22Heli_Pawn::SetHorizontalInput);
-		PlayerInputComponent->BindAxis(TEXT("XBOXThrottle"), this, &AR22Heli_Pawn::SetThrottleInput);
-		PlayerInputComponent->BindAxis(TEXT("XBOXCollective"), this, &AR22Heli_Pawn::SetCollectiveInput);
-		PlayerInputComponent->BindAxis(TEXT("XBOXPedal"), this, &AR22Heli_Pawn::SetPedalInput);
-	}
 }
 //Setter Functions
 
