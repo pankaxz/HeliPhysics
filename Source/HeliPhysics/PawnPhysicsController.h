@@ -4,35 +4,39 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "PawnController.generated.h"
+#include "PawnPhysicsController.generated.h"
 
 class AR22Heli_Pawn;
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class HELIPHYSICS_API UPawnController : public UActorComponent
+class HELIPHYSICS_API UPawnPhysicsController : public UActorComponent
 {
 	GENERATED_BODY()
 
 public:	
 	// Sets default values for this component's properties
-	UPawnController();
+	UPawnPhysicsController();
 
 	//variables
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pawn Controller")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pawn Physics Controller")
 	float MaxSpeed = 1.0f;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pawn Controller")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pawn Physics Controller")
 	FVector MovemmentDirection = FVector(0.0f,0.0f,0.0f);
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pawn Physics Controller")
+	FVector HeliCenterOfMass;
 
 	UFUNCTION()
 	virtual void HandlePhysics();
-protected:
+
+	protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
 	AR22Heli_Pawn* R22HeliPawn;
 
-
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Pawn Physics Controller")
+	float HeliWeight = 10.0f;
 
 public:	
 	// Called every frame

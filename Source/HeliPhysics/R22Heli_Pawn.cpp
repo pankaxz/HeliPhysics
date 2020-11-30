@@ -3,7 +3,7 @@
 
 #include "R22Heli_Pawn.h"
 // #include "InputController.h"
-#include "PawnController.h"
+#include "PawnPhysicsController.h"
 #include "Components/CapsuleComponent.h"
 
 // Sets default values
@@ -67,16 +67,15 @@ AR22Heli_Pawn::AR22Heli_Pawn()
 	Col_RSkid->SetCollisionObjectType(ECollisionChannel::ECC_Vehicle);
 	Col_RSkid->SetCollisionResponseToAllChannels(ECR_Block);
 
+	//Setup Center of mass for PawnPhysicsController
+	SC_HeliCenterOfMass = CreateDefaultSubobject<USceneComponent>(TEXT("Center of Mass"));
+	SC_HeliCenterOfMass->SetupAttachment(SM_RootBody);
+	
 	// Take control of the default player
 	AutoPossessPlayer = EAutoReceiveInput::Player0;
 
-	//
-	// InputControllerVar = CreateDefaultSubobject<UInputController>(TEXT("Input Contoroller"));
-	// AddOwnedComponent(InputControllerVar);
-	// InputControllerVar->UpdatedComponent = RootComponent;
-
-	PawnControllerVar = CreateDefaultSubobject<UPawnController>(TEXT("Pawn Contoroller"));
-	AddOwnedComponent(PawnControllerVar);
+	PawnPhysicsControllerVar = CreateDefaultSubobject<UPawnPhysicsController>(TEXT("Pawn Contoroller"));
+	AddOwnedComponent(PawnPhysicsControllerVar);
 }
 
 // Called when the game starts or when spawned
@@ -90,7 +89,7 @@ void AR22Heli_Pawn::BeginPlay()
 void AR22Heli_Pawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	// UE_LOG(LogTemp, Warning, TEXT("Use Keyboard: %u"), InputControllerVar->bUseKeyboardInput);
+	// UE_LOG(LogTemp, Warning, TEXT("Use Keyboard: %u"), SC_HeliCenterOfMass->GetComponentLocation());
 	
 }
 
@@ -172,4 +171,15 @@ float AR22Heli_Pawn::GetCollectiveInput()
 FVector2D AR22Heli_Pawn::GetCyclicInput()
 {
 	return CyclicInput;
+}
+
+UStaticMeshComponent* AR22Heli_Pawn::GetHeliRootBody()
+{
+	return SM_RootBody;
+}
+
+FVector AR22Heli_Pawn::GetHeliCenterOfMass()
+{
+	FVector HeliCenterOfMassLocation = SC_HeliCenterOfMass->GetComponentLocation();
+	return HeliCenterOfMassLocation;
 }

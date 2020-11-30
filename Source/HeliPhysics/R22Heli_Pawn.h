@@ -8,7 +8,7 @@
 
 class UCapsuleComponent;
 class UInputController;
-class UPawnController;
+class UPawnPhysicsController;
 UCLASS()
 class HELIPHYSICS_API AR22Heli_Pawn : public APawn
 {
@@ -25,6 +25,9 @@ public:
 	float GetPedalInput();
 	float GetCollectiveInput();
 	FVector2D GetCyclicInput();
+	UStaticMeshComponent* GetHeliRootBody();
+	FVector GetHeliCenterOfMass();
+	
 	
 	
 
@@ -32,10 +35,10 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	
-    UPROPERTY(EditAnywhere,BlueprintReadOnly, Category="HeliPawn")
+    UPROPERTY(EditDefaultsOnly,BlueprintReadOnly, Category="HeliPawn",  meta = (AllowProtectedAccess = "true"))
     UStaticMeshComponent* SM_RootBody;
     
-    UPROPERTY()
+    UPROPERTY(EditDefaultsOnly)
     USceneComponent* SC_Graphics;
     
     UPROPERTY(EditDefaultsOnly)
@@ -52,6 +55,9 @@ protected:
     
     UPROPERTY(EditDefaultsOnly)
     UCapsuleComponent* Col_Fuselage;
+	
+	UPROPERTY(EditDefaultsOnly)
+	USceneComponent* SC_HeliCenterOfMass;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	UInputController* InputControllerVar;
@@ -61,8 +67,8 @@ protected:
 	// TSubclassOf<UInputController> InputControllerComponent;
 
 	//Pawn controlelr
-	UPROPERTY(EditDefaultsOnly)
-	UPawnController* PawnControllerVar;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UPawnPhysicsController* PawnPhysicsControllerVar;
 	
 public:	
 	// Called every frame

@@ -35,8 +35,8 @@
           <e p="InputController.h" t="Include" />
           <e p="KeyboardInputComponent.cpp" t="Include" />
           <e p="KeyboardInputComponent.h" t="Include" />
-          <e p="PawnController.cpp" t="Include" />
-          <e p="PawnController.h" t="Include" />
+          <e p="PawnPhysicsController.cpp" t="Include" />
+          <e p="PawnPhysicsController.h" t="Include" />
           <e p="R22Heli_Pawn.cpp" t="Include" />
           <e p="R22Heli_Pawn.h" t="Include" />
         </e>
