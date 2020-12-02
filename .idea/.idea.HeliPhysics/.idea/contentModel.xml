@@ -26,6 +26,8 @@
       <e p="packages" t="ExcludeRecursive" />
       <e p="Source" t="Include">
         <e p="HeliPhysics" t="Include">
+          <e p="HeliEngine.cpp" t="Include" />
+          <e p="HeliEngine.h" t="Include" />
           <e p="HeliPhysics.Build.cs" t="Include" />
           <e p="HeliPhysics.cpp" t="Include" />
           <e p="HeliPhysics.h" t="Include" />

@@ -59,14 +59,7 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	USceneComponent* SC_HeliCenterOfMass;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	UInputController* InputControllerVar;
-	
-	// //Input Controller Var
-	// UPROPERTY(EditDefaultsOnly)
-	// TSubclassOf<UInputController> InputControllerComponent;
-
-	//Pawn controlelr
+	//Pawn controller
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	UPawnPhysicsController* PawnPhysicsControllerVar;
 	

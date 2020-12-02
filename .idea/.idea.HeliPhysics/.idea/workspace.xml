@@ -24,17 +24,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="741f8425-4cc2-4f16-a1f1-e2ea537af92b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/BP_R22Heli_Test.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/BP_R22Heli_Pawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/BP_R22Heli_Pawn.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/BP_R22Heli_PawnBackup.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/MainRotorHandler.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/MainRotorHandler.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/HP_Test/Maps/TestMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Test/Maps/TestMap.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/PawnController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/PawnController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,8 +53,9 @@
         <option value="$PROJECT_DIR$/Source/HeliPhysics/BaseRBController.h" />
         <option value="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.h" />
         <option value="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" />
-        <option value="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" />
         <option value="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.cpp" />
+        <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.h" />
+        <option value="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" />
       </list>
     </option>
   </component>
@@ -406,6 +402,7 @@
       <workItem from="1606639917255" duration="8689000" />
       <workItem from="1606665727770" duration="11641000" />
       <workItem from="1606747607879" duration="11787000" />
+      <workItem from="1606844967673" duration="1472000" />
     </task>
     <task id="LOCAL-00001" summary="Added PawnController">
       <created>1606682743906</created>
