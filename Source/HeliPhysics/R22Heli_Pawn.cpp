@@ -2,8 +2,8 @@
 
 
 #include "R22Heli_Pawn.h"
-// #include "InputController.h"
 #include "PawnPhysicsController.h"
+#include "HeliEngine.h"
 #include "Components/CapsuleComponent.h"
 
 // Sets default values
@@ -76,20 +76,20 @@ AR22Heli_Pawn::AR22Heli_Pawn()
 
 	PawnPhysicsControllerVar = CreateDefaultSubobject<UPawnPhysicsController>(TEXT("Pawn Contoroller"));
 	AddOwnedComponent(PawnPhysicsControllerVar);
+
+	HeliEngine = CreateDefaultSubobject<UHeliEngine>(TEXT("Heli Engine"));
+	AddOwnedComponent(HeliEngine);
 }
 
-// Called when the game starts or when spawned
 void AR22Heli_Pawn::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
 void AR22Heli_Pawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	// UE_LOG(LogTemp, Warning, TEXT("Use Keyboard: %u"), SC_HeliCenterOfMass->GetComponentLocation());
 	
 }
 

@@ -6,16 +6,19 @@
 #include "GameFramework/Pawn.h"
 #include "R22Heli_Pawn.generated.h"
 
+//classes
 class UCapsuleComponent;
 class UInputController;
 class UPawnPhysicsController;
+class UHeliEngine;
+
 UCLASS()
 class HELIPHYSICS_API AR22Heli_Pawn : public APawn
 {
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this pawn's properties
+	
 	AR22Heli_Pawn();
 
 	//Getters
@@ -32,7 +35,6 @@ public:
 	
 
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	
     UPROPERTY(EditDefaultsOnly,BlueprintReadOnly, Category="HeliPawn",  meta = (AllowProtectedAccess = "true"))
@@ -59,9 +61,17 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	USceneComponent* SC_HeliCenterOfMass;
 
+	//Actor Components
+	//
 	//Pawn controller
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	UPawnPhysicsController* PawnPhysicsControllerVar;
+
+	//Engine
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UHeliEngine* HeliEngine;
+
+	
 	
 public:	
 	// Called every frame
@@ -79,6 +89,7 @@ private:
 	void SetPedalInput(float AxisValue);
 	void SetCollectiveInput(float AxisValue);
 	void SetCyclicInput();
+	
 	//Input Variables
 	//
 	//Horizontal Input - w s

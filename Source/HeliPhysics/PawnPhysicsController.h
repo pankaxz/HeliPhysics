@@ -3,10 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "HeliEngine.h"
 #include "Components/ActorComponent.h"
 #include "PawnPhysicsController.generated.h"
 
 class AR22Heli_Pawn;
+
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class HELIPHYSICS_API UPawnPhysicsController : public UActorComponent
 {
@@ -21,22 +23,31 @@ public:
 	float MaxSpeed = 1.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pawn Physics Controller")
-	FVector MovemmentDirection = FVector(0.0f,0.0f,0.0f);
+	FVector MovementDirection = FVector(0.0f,0.0f,0.0f);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pawn Physics Controller")
 	FVector HeliCenterOfMass;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Pawn Physics Controller")
+	float HeliWeight = 10.0f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Pawn Physics Controller")
+	TArray<TSubclassOf<UHeliEngine>> EngineArray;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Pawn Physics Controller")
+	UHeliEngine* HeliEngine;
+	
 	UFUNCTION()
 	virtual void HandlePhysics();
 
-	protected:
+protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
 	AR22Heli_Pawn* R22HeliPawn;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Pawn Physics Controller")
-	float HeliWeight = 10.0f;
+	virtual void HandleEngine();
+
 
 public:	
 	// Called every frame
