@@ -2,6 +2,8 @@
 
 
 #include "R22Heli_Pawn.h"
+
+#include "HeliController.h"
 #include "PawnPhysicsController.h"
 #include "HeliEngine.h"
 #include "Components/CapsuleComponent.h"
@@ -76,6 +78,9 @@ AR22Heli_Pawn::AR22Heli_Pawn()
 
 	PawnPhysicsControllerVar = CreateDefaultSubobject<UPawnPhysicsController>(TEXT("Pawn Contoroller"));
 	AddOwnedComponent(PawnPhysicsControllerVar);
+
+	UHeliController* HeliController = CreateDefaultSubobject<UHeliController>(TEXT("Heli Controller"));
+	AddOwnedComponent(HeliController);
 
 	HeliEngine = CreateDefaultSubobject<UHeliEngine>(TEXT("Heli Engine"));
 	AddOwnedComponent(HeliEngine);

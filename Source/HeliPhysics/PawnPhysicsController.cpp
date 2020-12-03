@@ -30,8 +30,7 @@ void UPawnPhysicsController::BeginPlay()
 	}
 
 	HeliEngine = Cast<UHeliEngine>(GetOwner()->FindComponentByClass<UHeliEngine>());
-
-
+	
 }
 
 // Called every frame
@@ -39,28 +38,16 @@ void UPawnPhysicsController::TickComponent(float DeltaTime, ELevelTick TickType,
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 	
-	// if(R22HeliPawn)
-	// {
-	// 	HandlePhysics();
-	// }
-	
-	if(HeliEngine)
+	if(R22HeliPawn)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Valid"));
-		UE_LOG(LogTemp, Warning, TEXT("Number : %u"), EngineArray.Num());
+		HandlePhysics();
 	}
-	else UE_LOG(LogTemp, Warning, TEXT("Not Valid"));
-
-	// if(EngineArray.Num()>1)
-	// {
-	// 	UE_LOG(LogTemp, Warning, TEXT("Number : %f"), EngineArray.Num());
-	// }
-
+	
 }
 
 void UPawnPhysicsController::HandlePhysics()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Handleing physics"));
+	UE_LOG(LogTemp, Warning, TEXT("Handleing physics in Parent"));
 }
 
 //todo
