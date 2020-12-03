@@ -15,11 +15,25 @@ class HELIPHYSICS_API UHeliController : public UPawnPhysicsController
 	GENERATED_BODY()
 	UHeliController();
 
-protected:
-	
-	virtual void HandlePhysics() override;
 
+	
+protected:
+	// Called when the game starts
+	virtual void BeginPlay() override;
+
+	virtual void HandleEngine();
+
+	
+	
 public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
+	virtual void HandlePhysics() override;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Pawn Physics Controller")
+	TArray<TSubclassOf<UHeliEngine>> EngineArray;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Pawn Physics Controller")
+	UHeliEngine* HeliEngine;
 	
 };

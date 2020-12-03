@@ -6,12 +6,13 @@
 #include "GameFramework/Pawn.h"
 #include "R22Heli_Pawn.generated.h"
 
+
 //classes
 class UCapsuleComponent;
 class UInputController;
 class UPawnPhysicsController;
 class UHeliEngine;
-
+class UHeliController;
 UCLASS()
 class HELIPHYSICS_API AR22Heli_Pawn : public APawn
 {
@@ -67,6 +68,9 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	UPawnPhysicsController* PawnPhysicsControllerVar;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UHeliController* HeliController;
+	
 	//Engine
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	UHeliEngine* HeliEngine;

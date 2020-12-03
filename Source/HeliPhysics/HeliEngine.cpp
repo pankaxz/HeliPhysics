@@ -26,7 +26,7 @@ void UHeliEngine::TickComponent(float DeltaTime, ELevelTick TickType, FActorComp
 
 void UHeliEngine::UpdateEngine(float ThrottleInput)
 {
-	
+	UE_LOG(LogTemp, Warning, TEXT("Throttle Input val : %f"), ThrottleInput);
 }
 
 

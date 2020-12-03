@@ -79,7 +79,7 @@ AR22Heli_Pawn::AR22Heli_Pawn()
 	PawnPhysicsControllerVar = CreateDefaultSubobject<UPawnPhysicsController>(TEXT("Pawn Contoroller"));
 	AddOwnedComponent(PawnPhysicsControllerVar);
 
-	UHeliController* HeliController = CreateDefaultSubobject<UHeliController>(TEXT("Heli Controller"));
+	HeliController = CreateDefaultSubobject<UHeliController>(TEXT("Heli Controller"));
 	AddOwnedComponent(HeliController);
 
 	HeliEngine = CreateDefaultSubobject<UHeliEngine>(TEXT("Heli Engine"));

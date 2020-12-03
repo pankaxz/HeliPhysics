@@ -24,12 +24,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="741f8425-4cc2-4f16-a1f1-e2ea537af92b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliController.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliController.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Materials/M_ClearCoat_2.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/HP_Test/Art/Materials/M_ClearCoat_Inst.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Materials/M_ClearCoat_Inst.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/HP_Test/Art/Materials/M_ClearCoat_Inst_Inst.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Materials/M_ClearCoat_Inst_Inst.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/BP_R22Heli_Pawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/BP_R22Heli_Pawn.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/MainRotorHandler.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/MainRotorHandler.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/HP_Test/Maps/TestMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Test/Maps/TestMap.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HeliPhysics.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/HeliPhysics.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,26 +52,18 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/HeliPhysics/HeliController.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Source/HeliPhysics/InputController.h" />
-        <option value="$PROJECT_DIR$/Source/HeliPhysics/InputController.cpp" />
-        <option value="$PROJECT_DIR$/Source/HeliPhysics/PawnController.h" />
-        <option value="$PROJECT_DIR$/Source/HeliPhysics/PawnController.cpp" />
-        <option value="$PROJECT_DIR$/Source/HeliPhysics/BaseRBController.h" />
-        <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.cpp" />
-        <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.h" />
-        <option value="$PROJECT_DIR$/../../UE4Practice/UdemyCourseWork/SimpleShooter/Source/SimpleShooter/Character/ShooterCharacter.cpp" />
-        <option value="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.h" />
-        <option value="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" />
-        <option value="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.cpp" />
-        <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliController.h" />
-        <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliController.cpp" />
-        <option value="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" />
-      </list>
-    </option>
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.cpp" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.h" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliController.h" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.cpp" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliController.cpp" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1kqQGakhNVyaNl2sAG2eTklTnvT" />
   <component name="ProjectViewState">
@@ -70,7 +73,6 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.customizations" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -407,7 +409,10 @@
       <workItem from="1606747607879" duration="11787000" />
       <workItem from="1606844967673" duration="1472000" />
       <workItem from="1606924235231" duration="17730000" />
-      <workItem from="1606966016416" duration="2680000" />
+      <workItem from="1606966016416" duration="2883000" />
+      <workItem from="1607013609586" duration="401000" />
+      <workItem from="1607015930986" duration="9157000" />
+      <workItem from="1607027064603" duration="2594000" />
     </task>
     <task id="LOCAL-00001" summary="Added PawnController">
       <created>1606682743906</created>
@@ -438,51 +443,5 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Added PawnController" />
     <option name="LAST_COMMIT_MESSAGE" value="Added PawnController" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1879" height="291" key="GridCell.Tab.0.bottom" timestamp="1606943468057">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1879" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606943468057" />
-    <state width="1879" height="291" key="GridCell.Tab.0.center" timestamp="1606943468057">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1879" height="291" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606943468057" />
-    <state width="1879" height="291" key="GridCell.Tab.0.left" timestamp="1606943468057">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1879" height="291" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606943468057" />
-    <state width="1879" height="291" key="GridCell.Tab.0.right" timestamp="1606943468057">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1879" height="291" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606943468057" />
-    <state x="484" y="90" key="SettingsEditor" timestamp="1606931716520">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="484" y="90" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606931716520" />
-    <state x="567" y="136" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606931344963">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="567" y="136" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606931344963" />
-    <state x="1063" y="119" width="862" height="849" key="dock-window-1" timestamp="1606931222054">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="1063" y="119" width="862" height="849" key="dock-window-1/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606931222054" />
-    <state x="691" y="319" width="643" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1606931564098">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="691" y="319" width="643" height="281" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606931564098" />
-    <state x="616" y="243" key="run.anything.popup" timestamp="1606595936395">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606595936395" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1606939103935">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606939103935" />
-    <state x="682" y="438" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1606762060385">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="682" y="438" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1606762060385" />
   </component>
 </project>
