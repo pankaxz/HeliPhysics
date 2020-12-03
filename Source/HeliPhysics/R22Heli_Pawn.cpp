@@ -106,8 +106,7 @@ void AR22Heli_Pawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 	
 }
 //Setter Functions
-
-void AR22Heli_Pawn::SetHorizontalInput(float AxisValue)
+ void AR22Heli_Pawn::SetHorizontalInput(float AxisValue) 
 {
 	HorizontalInput = AxisValue;
 	CyclicInput.X = HorizontalInput;
