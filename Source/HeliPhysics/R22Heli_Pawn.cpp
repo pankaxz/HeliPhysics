@@ -84,6 +84,7 @@ AR22Heli_Pawn::AR22Heli_Pawn()
 
 	HeliEngine = CreateDefaultSubobject<UHeliEngine>(TEXT("Heli Engine"));
 	AddOwnedComponent(HeliEngine);
+	
 }
 
 void AR22Heli_Pawn::BeginPlay()

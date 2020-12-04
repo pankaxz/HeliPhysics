@@ -1,8 +1,5 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 
 #include "HeliController.h"
-
 #include "R22Heli_Pawn.h"
 
 UHeliController::UHeliController()
@@ -13,33 +10,46 @@ UHeliController::UHeliController()
 void UHeliController::BeginPlay()
 {
     Super::BeginPlay();
-    HeliEngine = Cast<UHeliEngine>(GetOwner()->FindComponentByClass<UHeliEngine>());
-}
-
-//todo works fine for 1 engine but what happens if we have to add more in future. seems possible in blueprint. Heli engine is not a good name for future 
-void UHeliController::HandleEngine()
-{
-    if(HeliEngine)
-    {
-        UE_LOG(LogTemp, Warning, TEXT("Engine Is valid"));
-        for(int i = 0; i < EngineArray.Num(); i++)
-        {
-            UE_LOG(LogTemp, Warning, TEXT("Engine Num : %u"), EngineArray.Num());
-            EngineArray[i] = HeliEngine->GetClass();
-            HeliEngine->UpdateEngine(R22HeliPawn->GetThrottleInput());
-        }
-    }
-}
-
-void UHeliController::HandlePhysics()
-{
-    Super::HandlePhysics();
-
-    HandleEngine();
+    
+    HeliEngine = GetOwner()->FindComponentByClass<UHeliEngine>();
+    EngineArray.Add(HeliEngine);
 }
 
 void UHeliController::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
     Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 }
+
+
+void UHeliController::HandlePhysics()
+{
+    Super::HandlePhysics();
+
+    HandleEngine();
+    HandleCharacteristics();
+}
+
+
+//todo: works fine for 1 engine. To Create more engine, add tags and check "(Engine->ComponentHasTag("EngineTwo"))"
+void UHeliController::HandleEngine()
+{
+    if(HeliEngine)
+    {
+        GetOwner()->GetComponents(HeliEngineComponents);
+        for (UHeliEngine* Engine : EngineArray)
+        {
+            HeliEngine = Engine;
+            HeliEngine->UpdateEngine(R22HeliPawn->GetThrottleInput());
+            float FinalPower = HeliEngine->GetCurrentHP();
+            UE_LOG(LogTemp, Warning, TEXT("Final Power : %f"),FinalPower);
+        }
+    }
+}
+
+void UHeliController::HandleCharacteristics()
+{
+}
+
+
+
 

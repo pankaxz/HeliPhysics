@@ -24,15 +24,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="741f8425-4cc2-4f16-a1f1-e2ea537af92b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/BP_R22Heli_Pawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/BP_R22Heli_Pawn.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/HP_Test/Maps/TestMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Test/Maps/TestMap.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliController.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,19 +44,24 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Core/Public/Containers/Array.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Engine/Private/EngineTypes.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/CoreUObject/Public/UObject/UObjectGlobals.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/HeliPhysics/HeliController.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/CoreUObject/Public/Templates/SubclassOf.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" />
-      <option value="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.h" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.cpp" />
-      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.cpp" />
-      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.h" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.h" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliController.h" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliController.cpp" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.h" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.cpp" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1kqQGakhNVyaNl2sAG2eTklTnvT" />
@@ -407,6 +413,7 @@
       <workItem from="1607015930986" duration="9157000" />
       <workItem from="1607027064603" duration="2684000" />
       <workItem from="1607053989718" duration="3007000" />
+      <workItem from="1607093593996" duration="23448000" />
     </task>
     <task id="LOCAL-00001" summary="Added PawnController">
       <created>1606682743906</created>

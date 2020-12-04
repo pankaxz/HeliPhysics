@@ -1,9 +1,8 @@
-// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "HeliEngine.h"
+#include "R22Heli_Pawn.h"
 
-// Sets default values for this component's properties
 UHeliEngine::UHeliEngine()
 {
 
@@ -14,7 +13,7 @@ UHeliEngine::UHeliEngine()
 void UHeliEngine::BeginPlay()
 {
 	Super::BeginPlay();
-
+	R22HeliPawn = Cast<AR22Heli_Pawn> (GetOwner());
 	
 }
 
@@ -26,7 +25,14 @@ void UHeliEngine::TickComponent(float DeltaTime, ELevelTick TickType, FActorComp
 
 void UHeliEngine::UpdateEngine(float ThrottleInput)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Throttle Input val : %f"), ThrottleInput);
+	UE_LOG(LogTemp, Warning, TEXT("Throttle input : %f"),ThrottleInput);
+	//Calculate HorsePower
+	float WantedHP = ThrottleInput* MaxHP;
+	CurrentHP = FMath::Lerp(CurrentHP,WantedHP,GetWorld()->GetDeltaSeconds() * PowerDelay);
+
+	//Calculate RPM
+	float WantedRPM = ThrottleInput * MaxRPM ;
+	CurrentRPM = FMath::Lerp(CurrentRPM,WantedRPM,GetWorld()->GetDeltaSeconds() * PowerDelay);
 }
 
 
@@ -38,13 +44,17 @@ void UHeliEngine::SetCurrentRPM()
 {
 }
 
-float UHeliEngine::GetCurrentHP()
+float UHeliEngine::GetCurrentHP() const
 {
 	return CurrentHP;
 }
 
-float UHeliEngine::GetCurrentRPM()
+float UHeliEngine::GetCurrentRPM() const
 {
 	return CurrentRPM;
+}
+
+void UHeliEngine::PowerDelayProgress(float Value)
+{
 }
 

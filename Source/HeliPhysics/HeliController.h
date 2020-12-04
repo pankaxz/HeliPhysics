@@ -1,4 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -18,11 +17,14 @@ class HELIPHYSICS_API UHeliController : public UPawnPhysicsController
 
 	
 protected:
-	// Called when the game starts
+	
 	virtual void BeginPlay() override;
 
 	UFUNCTION(BlueprintCallable)
 	virtual void HandleEngine();
+	
+	UFUNCTION(BlueprintCallable)
+	virtual void HandleCharacteristics();
 
 	
 	
@@ -32,9 +34,11 @@ public:
 	virtual void HandlePhysics() override;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Pawn Physics Controller")
-	TArray<TSubclassOf<UHeliEngine>> EngineArray;
-
+	TArray<UHeliEngine*> EngineArray;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Pawn Physics Controller")
 	UHeliEngine* HeliEngine;
+
+	TInlineComponentArray<UHeliEngine*> HeliEngineComponents;
 	
 };
