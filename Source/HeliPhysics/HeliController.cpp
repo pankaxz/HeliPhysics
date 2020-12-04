@@ -16,6 +16,7 @@ void UHeliController::BeginPlay()
     HeliEngine = Cast<UHeliEngine>(GetOwner()->FindComponentByClass<UHeliEngine>());
 }
 
+//todo works fine for 1 engine but what happens if we have to add more in future. seems possible in blueprint. Heli engine is not a good name for future 
 void UHeliController::HandleEngine()
 {
     if(HeliEngine)
@@ -23,7 +24,8 @@ void UHeliController::HandleEngine()
         UE_LOG(LogTemp, Warning, TEXT("Engine Is valid"));
         for(int i = 0; i < EngineArray.Num(); i++)
         {
-            //EngineArray[i] = HeliEngine->GetClass();
+            UE_LOG(LogTemp, Warning, TEXT("Engine Num : %u"), EngineArray.Num());
+            EngineArray[i] = HeliEngine->GetClass();
             HeliEngine->UpdateEngine(R22HeliPawn->GetThrottleInput());
         }
     }

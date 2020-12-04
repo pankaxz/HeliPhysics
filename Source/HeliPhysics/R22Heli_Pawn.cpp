@@ -147,42 +147,42 @@ void AR22Heli_Pawn::SetCyclicInput()
 
 //Getter Functions
 
-float AR22Heli_Pawn::GetHorizontalInput()
+float AR22Heli_Pawn::GetHorizontalInput() const
 {
 	return HorizontalInput;
 }
 
-float AR22Heli_Pawn::GetVerticalInput()
+float AR22Heli_Pawn::GetVerticalInput() const
 {
 	return  VerticalInput;
 }
 
-float AR22Heli_Pawn::GetThrottleInput()
+float AR22Heli_Pawn::GetThrottleInput() const
 {
 	return ThrottleInput;
 }
 
-float AR22Heli_Pawn::GetPedalInput()
+float AR22Heli_Pawn::GetPedalInput() const
 {
 	return PedalInput;
 }
 
-float AR22Heli_Pawn::GetCollectiveInput()
+float AR22Heli_Pawn::GetCollectiveInput() const
 {
 	return CollectiveInput;
 }
 
-FVector2D AR22Heli_Pawn::GetCyclicInput()
+FVector2D AR22Heli_Pawn::GetCyclicInput() const
 {
 	return CyclicInput;
 }
 
-UStaticMeshComponent* AR22Heli_Pawn::GetHeliRootBody()
+UStaticMeshComponent* AR22Heli_Pawn::GetHeliRootBody() const
 {
 	return SM_RootBody;
 }
 
-FVector AR22Heli_Pawn::GetHeliCenterOfMass()
+FVector AR22Heli_Pawn::GetHeliCenterOfMass() const
 {
 	FVector HeliCenterOfMassLocation = SC_HeliCenterOfMass->GetComponentLocation();
 	return HeliCenterOfMassLocation;

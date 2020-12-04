@@ -23,14 +23,14 @@ public:
 	AR22Heli_Pawn();
 
 	//Getters
-	float GetHorizontalInput();
-	float GetVerticalInput() ;
-	float GetThrottleInput();
-	float GetPedalInput();
-	float GetCollectiveInput();
-	FVector2D GetCyclicInput();
-	UStaticMeshComponent* GetHeliRootBody();
-	FVector GetHeliCenterOfMass();
+	float GetHorizontalInput() const;
+	float GetVerticalInput() const;
+	float GetThrottleInput() const;
+	float GetPedalInput() const;
+	float GetCollectiveInput() const;
+	FVector2D GetCyclicInput() const;
+	UStaticMeshComponent* GetHeliRootBody() const;
+	FVector GetHeliCenterOfMass() const;
 	
 	
 	

@@ -21,7 +21,7 @@ void UPawnPhysicsController::BeginPlay()
 	if(R22HeliPawn)
 	{
 		R22HeliPawn->GetHeliRootBody()->SetMassOverrideInKg(NAME_None, HeliWeight, true);
-		//R22HeliPawn->GetHeliRootBody()->SetCenterOfMass(HeliCenterOfMass, NAME_None);
+		
 	}
 	
 }

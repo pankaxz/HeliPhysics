@@ -39,7 +39,8 @@ public:
 protected:
 	
 	virtual void BeginPlay() override;
-	
+
+	UPROPERTY()
 	AR22Heli_Pawn* R22HeliPawn;
 
 	//Setter Functions
