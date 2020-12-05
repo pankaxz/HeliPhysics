@@ -41,7 +41,7 @@ void UHeliController::HandleEngine()
             HeliEngine = Engine;
             HeliEngine->UpdateEngine(R22HeliPawn->GetThrottleInput());
             float FinalPower = HeliEngine->GetCurrentHP();
-            UE_LOG(LogTemp, Warning, TEXT("Final Power : %f"),FinalPower);
+            UE_LOG(LogTemp, Warning, TEXT("Final Power with curve : %f"),FinalPower);
         }
     }
 }
