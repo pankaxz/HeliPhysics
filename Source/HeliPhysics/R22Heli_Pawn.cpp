@@ -2,10 +2,10 @@
 
 
 #include "R22Heli_Pawn.h"
-
 #include "HeliController.h"
 #include "PawnPhysicsController.h"
 #include "HeliEngine.h"
+#include "HeliRotorController.h"
 #include "Components/CapsuleComponent.h"
 
 // Sets default values
@@ -84,6 +84,10 @@ AR22Heli_Pawn::AR22Heli_Pawn()
 
 	HeliEngine = CreateDefaultSubobject<UHeliEngine>(TEXT("Heli Engine"));
 	AddOwnedComponent(HeliEngine);
+
+	HeliRotorController = CreateDefaultSubobject<UHeliRotorController>(TEXT("Heli Rotor Controller"));
+	AddOwnedComponent(HeliRotorController);
+
 	
 }
 
@@ -96,6 +100,9 @@ void AR22Heli_Pawn::BeginPlay()
 void AR22Heli_Pawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	UE_LOG(LogTemp, Warning, TEXT("Sticky Throttle : %f"),GetStickyThrottleInput());
+	UE_LOG(LogTemp, Warning, TEXT("Raw Throttle : %f"),GetRawThrottleInput());
+	UE_LOG(LogTemp, Warning, TEXT("--------------------------------------------"));
 	
 }
 
@@ -106,7 +113,7 @@ void AR22Heli_Pawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 
 		PlayerInputComponent->BindAxis(TEXT("Horizontal"), this, &AR22Heli_Pawn::SetHorizontalInput);
 		PlayerInputComponent->BindAxis(TEXT("Vertical"), this, &AR22Heli_Pawn::SetVerticalInput);
-		PlayerInputComponent->BindAxis(TEXT("Throttle"), this, &AR22Heli_Pawn::SetThrottleInput);
+		PlayerInputComponent->BindAxis(TEXT("Throttle"), this, &AR22Heli_Pawn::SetRawThrottleInput);
 		PlayerInputComponent->BindAxis(TEXT("Collective"), this, &AR22Heli_Pawn::SetCollectiveInput);
 		PlayerInputComponent->BindAxis(TEXT("Pedal"), this, &AR22Heli_Pawn::SetPedalInput);
 	
@@ -124,9 +131,16 @@ void AR22Heli_Pawn::SetVerticalInput(float AxisValue)
 	CyclicInput.Y = VerticalInput;
 }
 
-void AR22Heli_Pawn::SetThrottleInput(float AxisValue)
+void AR22Heli_Pawn::SetRawThrottleInput(float AxisValue)
 {
 	ThrottleInput = AxisValue;
+	SetStickyThrottleInput();
+}
+
+void AR22Heli_Pawn::SetStickyThrottleInput()
+{
+	StickyThrottle += GetRawThrottleInput() * GetWorld()->GetDeltaSeconds();
+	StickyThrottle = FMath::Clamp(StickyThrottle,0.0f,1.0f);
 }
 
 void AR22Heli_Pawn::SetPedalInput(float AxisValue)
@@ -158,9 +172,14 @@ float AR22Heli_Pawn::GetVerticalInput() const
 	return  VerticalInput;
 }
 
-float AR22Heli_Pawn::GetThrottleInput() const
+float AR22Heli_Pawn::GetRawThrottleInput() const
 {
 	return ThrottleInput;
+}
+
+float AR22Heli_Pawn::GetStickyThrottleInput() const
+{
+	return StickyThrottle;
 }
 
 float AR22Heli_Pawn::GetPedalInput() const

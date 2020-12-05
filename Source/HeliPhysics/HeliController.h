@@ -8,6 +8,10 @@
 /**
  * 
  */
+
+class UHeliEngine;
+class UHeliRotorController;
+
 UCLASS()
 class HELIPHYSICS_API UHeliController : public UPawnPhysicsController
 {
@@ -22,6 +26,9 @@ protected:
 
 	UFUNCTION(BlueprintCallable)
 	virtual void HandleEngine();
+
+	UFUNCTION(BlueprintCallable)
+	virtual void HandleRotors();
 	
 	UFUNCTION(BlueprintCallable)
 	virtual void HandleCharacteristics();
@@ -40,5 +47,8 @@ public:
 	UHeliEngine* HeliEngine;
 
 	TInlineComponentArray<UHeliEngine*> HeliEngineComponents;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Pawn Physics Controller")
+	UHeliRotorController* HeliRotorController;
 	
 };

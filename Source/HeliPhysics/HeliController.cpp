@@ -1,5 +1,7 @@
 
 #include "HeliController.h"
+#include "HeliEngine.h"
+#include "HeliRotorController.h"
 #include "R22Heli_Pawn.h"
 
 UHeliController::UHeliController()
@@ -12,6 +14,8 @@ void UHeliController::BeginPlay()
     Super::BeginPlay();
     
     HeliEngine = GetOwner()->FindComponentByClass<UHeliEngine>();
+    HeliRotorController = GetOwner()->FindComponentByClass<UHeliRotorController>();
+    
     EngineArray.Add(HeliEngine);
 }
 
@@ -26,11 +30,12 @@ void UHeliController::HandlePhysics()
     Super::HandlePhysics();
 
     HandleEngine();
+    HandleRotors();
     HandleCharacteristics();
 }
 
 
-//todo: works fine for 1 engine. To Create more engine, add tags and check "(Engine->ComponentHasTag("EngineTwo"))"
+//note: works fine for 1 engine. To Create more engine, add tags and check "(Engine->ComponentHasTag("EngineTwo"))"
 void UHeliController::HandleEngine()
 {
     if(HeliEngine)
@@ -39,10 +44,17 @@ void UHeliController::HandleEngine()
         for (UHeliEngine* Engine : EngineArray)
         {
             HeliEngine = Engine;
-            HeliEngine->UpdateEngine(R22HeliPawn->GetThrottleInput());
+            HeliEngine->UpdateEngine(R22HeliPawn->GetStickyThrottleInput());
             float FinalPower = HeliEngine->GetCurrentHP();
-            UE_LOG(LogTemp, Warning, TEXT("Final Power with curve : %f"),FinalPower);
         }
+    }
+}
+
+void UHeliController::HandleRotors()
+{
+    if(HeliRotorController && EngineArray.Num()>0)
+    {
+        HeliRotorController->UpdateRotors(HeliEngine->GetCurrentRPM());
     }
 }
 

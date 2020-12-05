@@ -13,6 +13,8 @@ class UInputController;
 class UPawnPhysicsController;
 class UHeliEngine;
 class UHeliController;
+class UHeliRotorController;
+
 UCLASS()
 class HELIPHYSICS_API AR22Heli_Pawn : public APawn
 {
@@ -25,9 +27,13 @@ public:
 	//Getters
 	float GetHorizontalInput() const;
 	float GetVerticalInput() const;
-	float GetThrottleInput() const;
+	
+	float GetRawThrottleInput() const;
+	float GetStickyThrottleInput() const;
+	
 	float GetPedalInput() const;
 	float GetCollectiveInput() const;
+	
 	FVector2D GetCyclicInput() const;
 	UStaticMeshComponent* GetHeliRootBody() const;
 	FVector GetHeliCenterOfMass() const;
@@ -75,6 +81,9 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	UHeliEngine* HeliEngine;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UHeliRotorController*  HeliRotorController;
+
 	
 	
 public:	
@@ -89,7 +98,8 @@ private:
 
 	void SetHorizontalInput(float AxisValue);
 	void SetVerticalInput(float AxisValue);
-	void SetThrottleInput(float AxisValue);
+	void SetRawThrottleInput(float AxisValue);
+	void SetStickyThrottleInput();
 	void SetPedalInput(float AxisValue);
 	void SetCollectiveInput(float AxisValue);
 	void SetCyclicInput();
@@ -102,10 +112,14 @@ private:
 	//Vertical Input - a d
 	float VerticalInput = 0.0f;
 	
-	//Throttle Input 9 0 
+	//Raw Throttle Input + -
 	UPROPERTY(VisibleAnywhere, Category = "InputTest")
 	float ThrottleInput = 0.0f;
-	
+
+	//Sticky Throttle Input 
+	UPROPERTY(VisibleAnywhere, Category = "InputTest")
+	float StickyThrottle = 0.0f;
+
 	//Pedal Input - right left
 	UPROPERTY(VisibleAnywhere, Category = "InputTest")
 	float PedalInput = 0.0f;

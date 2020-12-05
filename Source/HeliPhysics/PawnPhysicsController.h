@@ -3,18 +3,20 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "HeliEngine.h"
 #include "Components/ActorComponent.h"
 #include "PawnPhysicsController.generated.h"
 
 class AR22Heli_Pawn;
-
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+
+
 class HELIPHYSICS_API UPawnPhysicsController : public UActorComponent
 {
 	GENERATED_BODY()
 
-public:	
+public:
+
+	
 	UPawnPhysicsController();
 
 	//variables
@@ -37,14 +39,16 @@ public:
 
 	UPROPERTY()
 	AR22Heli_Pawn* R22HeliPawn;
+
+	
 protected:
-	// Called when the game starts
+	
 	virtual void BeginPlay() override;
 
 
 
-public:	
-	// Called every frame
+public:
+
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 		
