@@ -30,6 +30,8 @@
           <e p="HeliController.h" t="Include" />
           <e p="HeliEngine.cpp" t="Include" />
           <e p="HeliEngine.h" t="Include" />
+          <e p="HeliMainRotor.cpp" t="Include" />
+          <e p="HeliMainRotor.h" t="Include" />
           <e p="HeliPhysics.Build.cs" t="Include" />
           <e p="HeliPhysics.cpp" t="Include" />
           <e p="HeliPhysics.h" t="Include" />
@@ -37,6 +39,10 @@
           <e p="HeliPhysicsGameModeBase.h" t="Include" />
           <e p="HeliRotorController.cpp" t="Include" />
           <e p="HeliRotorController.h" t="Include" />
+          <e p="HeliRotorInterface.cpp" t="Include" />
+          <e p="HeliRotorInterface.h" t="Include" />
+          <e p="HeliTailRotor.cpp" t="Include" />
+          <e p="HeliTailRotor.h" t="Include" />
           <e p="PawnPhysicsController.cpp" t="Include" />
           <e p="PawnPhysicsController.h" t="Include" />
           <e p="R22Heli_Pawn.cpp" t="Include" />

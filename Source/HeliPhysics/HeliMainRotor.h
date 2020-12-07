@@ -3,39 +3,31 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
-#include "HeliRotorController.generated.h"
 
-class AR22Heli_Pawn;
+#include "HeliRotorInterface.h"
+#include "Components/ActorComponent.h"
+#include "HeliMainRotor.generated.h"
+
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class HELIPHYSICS_API UHeliRotorController : public UActorComponent
+class HELIPHYSICS_API UHeliMainRotor : public UActorComponent, public IHeliRotorInterface
 {
 	GENERATED_BODY()
 
-public:
-	
-	UHeliRotorController();
+public:	
+	// Sets default values for this component's properties
+	UHeliMainRotor();
 
-	void UpdateRotors(float CurrentRPM);
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Pawn Physics Controller")
-	TArray<UActorComponent*> RotorsList;
-	
-	UPROPERTY()
-	AR22Heli_Pawn* R22HeliPawn;
-
-	
 protected:
-
+	// Called when the game starts
 	virtual void BeginPlay() override;
 
-
-	
 public:	
-
+	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+	//Interface method
+	UFUNCTION()
+    virtual void UpdateRotor() override;
+	
 };
-
-

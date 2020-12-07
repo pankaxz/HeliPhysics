@@ -14,6 +14,8 @@ class UPawnPhysicsController;
 class UHeliEngine;
 class UHeliController;
 class UHeliRotorController;
+class UHeliMainRotor;
+class UHeliTailRotor;
 
 UCLASS()
 class HELIPHYSICS_API AR22Heli_Pawn : public APawn
@@ -38,7 +40,8 @@ public:
 	UStaticMeshComponent* GetHeliRootBody() const;
 	FVector GetHeliCenterOfMass() const;
 	
-	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Pawn Physics Controller")
+	TArray<UActorComponent*> HeliActorComponents;
 	
 
 protected:
@@ -70,6 +73,9 @@ protected:
 
 	//Actor Components
 	//
+	//
+
+	
 	//Pawn controller
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	UPawnPhysicsController* PawnPhysicsControllerVar;
@@ -79,12 +85,20 @@ protected:
 	
 	//Engine
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	UHeliEngine* HeliEngine;
+	UHeliEngine* HeliEngineNew;
 
+
+	// UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	// UHeliEngine* HeliEngineTEST;
+	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	UHeliRotorController*  HeliRotorController;
 
-	
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UHeliMainRotor*  HeliMainRotor;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UHeliTailRotor*  HeliTailRotor;
 	
 public:	
 	// Called every frame

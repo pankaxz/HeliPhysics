@@ -40,12 +40,13 @@ void UHeliController::HandleEngine()
 {
     if(HeliEngine)
     {
-        GetOwner()->GetComponents(HeliEngineComponents);
+        // GetOwner()->GetComponents(HeliEngineComponents);
         for (UHeliEngine* Engine : EngineArray)
         {
             HeliEngine = Engine;
             HeliEngine->UpdateEngine(R22HeliPawn->GetStickyThrottleInput());
             float FinalPower = HeliEngine->GetCurrentHP();
+            GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue, FString::Printf(TEXT("%f"), FinalPower));
         }
     }
 }

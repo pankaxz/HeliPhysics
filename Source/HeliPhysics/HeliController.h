@@ -46,7 +46,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Pawn Physics Controller")
 	UHeliEngine* HeliEngine;
 
-	TInlineComponentArray<UHeliEngine*> HeliEngineComponents;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Pawn Physics Controller")
 	UHeliRotorController* HeliRotorController;

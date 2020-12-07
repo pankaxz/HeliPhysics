@@ -6,6 +6,8 @@
 #include "PawnPhysicsController.h"
 #include "HeliEngine.h"
 #include "HeliRotorController.h"
+#include "HeliMainRotor.h"
+#include "HeliTailRotor.h"
 #include "Components/CapsuleComponent.h"
 
 // Sets default values
@@ -76,33 +78,61 @@ AR22Heli_Pawn::AR22Heli_Pawn()
 	// Take control of the default player
 	AutoPossessPlayer = EAutoReceiveInput::Player0;
 
-	PawnPhysicsControllerVar = CreateDefaultSubobject<UPawnPhysicsController>(TEXT("Pawn Contoroller"));
-	AddOwnedComponent(PawnPhysicsControllerVar);
-
-	HeliController = CreateDefaultSubobject<UHeliController>(TEXT("Heli Controller"));
-	AddOwnedComponent(HeliController);
-
-	HeliEngine = CreateDefaultSubobject<UHeliEngine>(TEXT("Heli Engine"));
-	AddOwnedComponent(HeliEngine);
-
-	HeliRotorController = CreateDefaultSubobject<UHeliRotorController>(TEXT("Heli Rotor Controller"));
-	AddOwnedComponent(HeliRotorController);
 
 	
+	PawnPhysicsControllerVar = CreateDefaultSubobject<UPawnPhysicsController>(TEXT("Pawn Contoroller"));
+	AddOwnedComponent(PawnPhysicsControllerVar);
+	PawnPhysicsControllerVar->ComponentTags.Add(FName("ActorComponentScript"));
+
+
+	
+	HeliController = CreateDefaultSubobject<UHeliController>(TEXT("Heli Controller"));
+	AddOwnedComponent(HeliController);
+	HeliController->ComponentTags.Add(FName("ActorComponentScript"));
+
+
+	
+	HeliEngineNew = CreateDefaultSubobject<UHeliEngine>(TEXT("Heli Engine"));
+	AddOwnedComponent(HeliEngineNew);
+	HeliEngineNew->ComponentTags.Add(FName("ActorComponentScript"));
+
+	
+	HeliRotorController = CreateDefaultSubobject<UHeliRotorController>(TEXT("Heli Rotor Controller"));
+	AddOwnedComponent(HeliRotorController);
+	HeliRotorController->ComponentTags.Add(FName("ActorComponentScript"));
+
+
+	
+	HeliMainRotor = CreateDefaultSubobject<UHeliMainRotor>(TEXT("Heli Main Rotor"));
+	AddOwnedComponent(HeliMainRotor);
+	HeliMainRotor->ComponentTags.Add(FName("ActorComponentScript"));
+
+
+	
+	HeliTailRotor = CreateDefaultSubobject<UHeliTailRotor>(TEXT("Heli Tail Rotor"));
+	AddOwnedComponent(HeliTailRotor);
+	HeliTailRotor->ComponentTags.Add(FName("ActorComponentScript"));
+	
+	
+	
 }
+
 
 void AR22Heli_Pawn::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	// for (UActorComponent* ActorComponents : HeliActorComponents)
+	// {
+	// 	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue, FString::Printf(TEXT("%p"), ActorComponents));
+	// }
+
+	HeliActorComponents = GetComponentsByTag(UActorComponent::StaticClass(),FName("ActorComponentScript")) ;
 }
+
 
 void AR22Heli_Pawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	UE_LOG(LogTemp, Warning, TEXT("Sticky Throttle : %f"),GetStickyThrottleInput());
-	UE_LOG(LogTemp, Warning, TEXT("Raw Throttle : %f"),GetRawThrottleInput());
-	UE_LOG(LogTemp, Warning, TEXT("--------------------------------------------"));
 	
 }
 
