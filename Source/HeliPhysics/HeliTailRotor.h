@@ -15,19 +15,16 @@ class HELIPHYSICS_API UHeliTailRotor : public UActorComponent, public IHeliRotor
 	GENERATED_BODY()
 
 public:	
-	// Sets default values for this component's properties
 	UHeliTailRotor();
 
 protected:
-	// Called when the game starts
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	
 	//Interface method
 	UFUNCTION()
-    virtual void UpdateRotor() override;
+    virtual void UpdateRotor(float DPS) override;
 		
 };

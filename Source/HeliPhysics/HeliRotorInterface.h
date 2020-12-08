@@ -24,6 +24,6 @@ class HELIPHYSICS_API IHeliRotorInterface
 public:
 
 	UFUNCTION()
-	virtual void UpdateRotor();
+	virtual void UpdateRotor(float DPS);
 	
 };

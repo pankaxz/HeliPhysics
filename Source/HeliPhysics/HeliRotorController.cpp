@@ -38,13 +38,17 @@ void UHeliRotorController::TickComponent(float DeltaTime, ELevelTick TickType, F
 
 void UHeliRotorController::UpdateRotors(float CurrentRPM)
 {
+	//Degree per second calculation
+	float DPS = (CurrentRPM * 360)/60.0f;
+
+	//Update Rotors
 	if(RotorsList.Num()>0)
 	{
 		for(auto Rotor : RotorsList)
 		{
 			if (IHeliRotorInterface* HeliRotorInterface = Cast<IHeliRotorInterface>(Rotor))
 			{ 
-				HeliRotorInterface->UpdateRotor();
+				HeliRotorInterface->UpdateRotor(DPS);
 			} 
 		}
 	}

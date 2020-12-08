@@ -55,9 +55,6 @@ public:
 	*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Power curve")
 	UCurveFloat* FPowerCurve;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Power curve")
-	float CurrentHPNonCurve;
 	
 protected:
 

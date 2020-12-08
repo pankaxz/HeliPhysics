@@ -2,38 +2,39 @@
 
 
 #include "HeliMainRotor.h"
+#include "R22Heli_Pawn.h"
 #include "HeliRotorInterface.h"
 
-// Sets default values for this component's properties
+
 UHeliMainRotor::UHeliMainRotor()
 {
-	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
-	// off to improve performance if you don't need them.
+	
 	PrimaryComponentTick.bCanEverTick = true;
-
-	// ...
+	R22HeliPawn = Cast<AR22Heli_Pawn> (GetOwner());
 }
 
 
-// Called when the game starts
 void UHeliMainRotor::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// ...
 	
 }
 
 
-// Called every frame
 void UHeliMainRotor::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 }
 
-
-void UHeliMainRotor::UpdateRotor()
+//todo  alert : Something wrong here
+void UHeliMainRotor::UpdateRotor(float DPS)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Black, FString::Printf(TEXT("Updating Main Rotor")));
+	float LocalDPS = DPS * GetWorld()->GetDeltaSeconds() * 0.5f;
+
+	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("DPS %f"), LocalDPS));
+	//R22HeliPawn->SC_MainMastRotor->SetWorldRotation((FRotator(0,0,LocalDPS)), false, 0, ETeleportType::None);
+	//transform.Rotate(Vector3.up, DPS * Time.deltaTime * 0.5f);
+	
 }
 

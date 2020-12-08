@@ -4,7 +4,7 @@
 #include "HeliRotorInterface.h"
 
 // Add default functionality here for any IHeliRotorInterface functions that are not pure virtual.
-void IHeliRotorInterface::UpdateRotor()
+void IHeliRotorInterface::UpdateRotor(float DPS)
 {
 	
 }

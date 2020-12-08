@@ -33,7 +33,7 @@ void UHeliTailRotor::TickComponent(float DeltaTime, ELevelTick TickType, FActorC
 	// ...
 }
 
-void UHeliTailRotor::UpdateRotor()
+void UHeliTailRotor::UpdateRotor(float DPS)
 {
 	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Black, FString::Printf(TEXT("Updating Tail Rotor")));
 }

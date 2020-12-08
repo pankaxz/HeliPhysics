@@ -39,8 +39,13 @@ public:
 	FVector2D GetCyclicInput() const;
 	UStaticMeshComponent* GetHeliRootBody() const;
 	FVector GetHeliCenterOfMass() const;
-	
-	
+
+	//Rotors 
+	UPROPERTY(EditDefaultsOnly)
+	USceneComponent* SC_MainMastRotor;
+
+	UPROPERTY(EditDefaultsOnly)
+	USceneComponent* SC_TailMastRotor;
 	
 
 protected:
@@ -51,7 +56,10 @@ protected:
     
     UPROPERTY(EditDefaultsOnly)
     USceneComponent* SC_Graphics;
-    
+
+	UPROPERTY(EditDefaultsOnly)
+	USceneComponent* SC_Body;
+	
     UPROPERTY(EditDefaultsOnly)
     UCapsuleComponent* Col_Mast;
     
@@ -85,10 +93,6 @@ protected:
 	//Engine
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	UHeliEngine* HeliEngineNew;
-
-
-	// UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	// UHeliEngine* HeliEngineTEST;
 	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	UHeliRotorController*  HeliRotorController;

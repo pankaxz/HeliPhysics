@@ -29,6 +29,15 @@ AR22Heli_Pawn::AR22Heli_Pawn()
 	//Graphics group
 	SC_Graphics = CreateDefaultSubobject<USceneComponent>(TEXT("SC_Graphics"));
 	SC_Graphics->SetupAttachment(SM_RootBody);
+
+	SC_Body = CreateDefaultSubobject<USceneComponent>(TEXT("SC_Body"));
+	SC_Body->SetupAttachment(SC_Graphics);
+
+	SC_MainMastRotor = CreateDefaultSubobject<USceneComponent>(TEXT("SC_MainMastRotor"));
+	SC_MainMastRotor->SetupAttachment(SC_Graphics);
+
+	SC_TailMastRotor = CreateDefaultSubobject<USceneComponent>(TEXT("SC_TailMastRotor"));
+	SC_TailMastRotor->SetupAttachment(SC_Graphics);
 	
 	//Colliders
 	Col_Fuselage = CreateDefaultSubobject<UCapsuleComponent>(TEXT("COL_Fuselage"));
