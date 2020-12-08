@@ -6,4 +6,5 @@
 // Add default functionality here for any IHeliRotorInterface functions that are not pure virtual.
 void IHeliRotorInterface::UpdateRotor()
 {
+	
 }

@@ -46,7 +46,6 @@ void UHeliController::HandleEngine()
             HeliEngine = Engine;
             HeliEngine->UpdateEngine(R22HeliPawn->GetStickyThrottleInput());
             float FinalPower = HeliEngine->GetCurrentHP();
-            GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue, FString::Printf(TEXT("%f"), FinalPower));
         }
     }
 }

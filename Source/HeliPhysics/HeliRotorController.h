@@ -3,13 +3,15 @@
 #pragma once
 
 #include "CoreMinimal.h"
+
+#include "HeliRotorInterface.h"
 #include "Components/ActorComponent.h"
 #include "HeliRotorController.generated.h"
 
 class AR22Heli_Pawn;
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class HELIPHYSICS_API UHeliRotorController : public UActorComponent
+class HELIPHYSICS_API UHeliRotorController : public UActorComponent, public IHeliRotorInterface
 {
 	GENERATED_BODY()
 

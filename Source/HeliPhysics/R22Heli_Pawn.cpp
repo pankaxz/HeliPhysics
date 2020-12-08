@@ -113,20 +113,13 @@ AR22Heli_Pawn::AR22Heli_Pawn()
 	AddOwnedComponent(HeliTailRotor);
 	HeliTailRotor->ComponentTags.Add(FName("ActorComponentScript"));
 	
-	
-	
+	HeliActorComponents = GetComponentsByTag(UActorComponent::StaticClass(),FName("ActorComponentScript"));
 }
 
 
 void AR22Heli_Pawn::BeginPlay()
 {
 	Super::BeginPlay();
-	// for (UActorComponent* ActorComponents : HeliActorComponents)
-	// {
-	// 	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue, FString::Printf(TEXT("%p"), ActorComponents));
-	// }
-
-	HeliActorComponents = GetComponentsByTag(UActorComponent::StaticClass(),FName("ActorComponentScript")) ;
 }
 
 

@@ -14,6 +14,7 @@ UHeliTailRotor::UHeliTailRotor()
 }
 
 
+
 // Called when the game starts
 void UHeliTailRotor::BeginPlay()
 {
