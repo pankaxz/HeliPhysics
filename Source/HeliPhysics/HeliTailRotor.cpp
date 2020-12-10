@@ -2,6 +2,7 @@
 
 
 #include "HeliTailRotor.h"
+#include "R22Heli_Pawn.h"
 
 // Sets default values for this component's properties
 UHeliTailRotor::UHeliTailRotor()
@@ -20,7 +21,7 @@ void UHeliTailRotor::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// ...
+	R22HeliPawn = Cast<AR22Heli_Pawn> (GetOwner());
 	
 }
 
@@ -36,5 +37,9 @@ void UHeliTailRotor::TickComponent(float DeltaTime, ELevelTick TickType, FActorC
 void UHeliTailRotor::UpdateRotor(float DPS)
 {
 	//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Black, FString::Printf(TEXT("Updating Tail Rotor")));
+	if(R22HeliPawn->SC_TailMastRotor)
+	{
+		R22HeliPawn->SC_TailMastRotor->AddLocalRotation((FRotator(0,0	,(( DPS *TailRotationSpeedModifier ) * GetWorld()->DeltaTimeSeconds))));
+	}
 }
 

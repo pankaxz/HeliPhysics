@@ -39,6 +39,7 @@ void UHeliRotorController::UpdateRotors(float CurrentRPM)
 {
 	//Degree per second calculation
 	float DPS = (CurrentRPM * 360)/60.0f;
+	DPS = FMath::Clamp(DPS, 0.0f, MaxDPS); 
 
 	//Update Rotors
 	if(RotorsList.Num()>0)
@@ -47,8 +48,6 @@ void UHeliRotorController::UpdateRotors(float CurrentRPM)
 		{
 			if (IHeliRotorInterface* HeliRotorInterface = Cast<IHeliRotorInterface>(Rotor))
 			{ 
-				GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red,
-					FString::Printf(TEXT("Calculated DPS at controller %f"), DPS));
 				HeliRotorInterface->UpdateRotor(DPS);
 			} 
 		}

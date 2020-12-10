@@ -17,6 +17,9 @@ class UHeliRotorController;
 class UHeliMainRotor;
 class UHeliTailRotor;
 
+		// GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green,
+		// 	FString::Printf(TEXT("DPS At Main Rotor %f"), LocalDPS));
+		
 UCLASS()
 class HELIPHYSICS_API AR22Heli_Pawn : public APawn
 {

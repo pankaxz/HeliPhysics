@@ -27,7 +27,8 @@ public:
 	UPROPERTY()
 	AR22Heli_Pawn* R22HeliPawn;
 
-	
+	UPROPERTY()
+	float MaxDPS =3000.0f;
 protected:
 
 	virtual void BeginPlay() override;

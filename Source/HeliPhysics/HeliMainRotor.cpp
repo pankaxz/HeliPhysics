@@ -15,8 +15,6 @@ void UHeliMainRotor::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Working")));
-	
 	R22HeliPawn = Cast<AR22Heli_Pawn> (GetOwner());
 }
 
@@ -30,17 +28,11 @@ void UHeliMainRotor::TickComponent(float DeltaTime, ELevelTick TickType, FActorC
 
 void UHeliMainRotor::UpdateRotor(float DPS)
 {
-	float LocalDPS =( DPS * 0.5f );
+	// float LocalDPS =( DPS * 0.5f ) * GetWorld()->DeltaTimeSeconds;
 	
 	if(R22HeliPawn->SC_MainMastRotor)
 	{
-		//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("%s"), *R22HeliPawn->SC_MainMastRotor->GetName()));
-
-		//R22HeliPawn->SC_MainMastRotor->AddLocalRotation((FRotator(0,LocalDPS,0)));
-		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green,
-			FString::Printf(TEXT("DPS At Main Rotor %f"), LocalDPS));
-		R22HeliPawn->SC_MainMastRotor->AddLocalRotation((FRotator(0,LocalDPS,0)));
-		// SC_MainMastRotor not rotating 
+		R22HeliPawn->SC_MainMastRotor->AddLocalRotation((FRotator(0,(( DPS * MainRotationSpeedModifier ) * GetWorld()->DeltaTimeSeconds),0)));
 	}
 }
 

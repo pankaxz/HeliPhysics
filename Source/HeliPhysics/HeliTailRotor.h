@@ -9,6 +9,7 @@
 #include "HeliTailRotor.generated.h"
 
 
+class AR22Heli_Pawn;
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class HELIPHYSICS_API UHeliTailRotor : public UActorComponent, public IHeliRotorInterface
 {
@@ -20,6 +21,12 @@ public:
 protected:
 	virtual void BeginPlay() override;
 
+	UPROPERTY()
+	AR22Heli_Pawn* R22HeliPawn;
+	
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category= "Tail Rotor")
+	float TailRotationSpeedModifier = 1.5f;
+	
 public:	
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	
