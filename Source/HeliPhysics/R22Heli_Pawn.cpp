@@ -13,7 +13,7 @@
 // Sets default values
 AR22Heli_Pawn::AR22Heli_Pawn()
 {
- 	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+
 	PrimaryActorTick.bCanEverTick = true;
 
 	//Physics box
@@ -39,7 +39,7 @@ AR22Heli_Pawn::AR22Heli_Pawn()
 	
 	SC_TailMastRotor = CreateDefaultSubobject<USceneComponent>(TEXT("SC_TailMastRotor"));
 	SC_TailMastRotor->SetupAttachment(SC_Graphics);
-	
+
 	//Colliders
 	Col_Fuselage = CreateDefaultSubobject<UCapsuleComponent>(TEXT("COL_Fuselage"));
 	Col_Fuselage->SetupAttachment(SM_RootBody);
@@ -130,6 +130,13 @@ AR22Heli_Pawn::AR22Heli_Pawn()
 void AR22Heli_Pawn::BeginPlay()
 {
 	Super::BeginPlay();
+
+	//Getting Static meshes from Blueprint by name
+	SM_RMainBlade = Cast<UStaticMeshComponent>(GetDefaultSubobjectByName(TEXT("R22_MainRotor_Mechanical_RBlade_Geo")));
+	SM_LMainBlade = Cast<UStaticMeshComponent>(GetDefaultSubobjectByName(TEXT("R22_MainRotor_Mechanical_LBlade_Geo")));
+	SM_RTailBlade = Cast<UStaticMeshComponent>(GetDefaultSubobjectByName(TEXT("R22_Mechanical_RTailBlade_Geo")));
+	SM_LTailBlade = Cast<UStaticMeshComponent>(GetDefaultSubobjectByName(TEXT("R22_Mechanical_LTailBlade_Geo")));
+	
 }
 
 

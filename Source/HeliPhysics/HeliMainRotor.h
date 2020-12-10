@@ -21,13 +21,19 @@ public:
 	
 	UPROPERTY()
 	AR22Heli_Pawn* R22HeliPawn;
+
+	float GetMainRotorMaxPitch();
 	
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 	
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category= "Tail Rotor")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category= "Main Rotor")
 	float MainRotationSpeedModifier = 0.5f;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category= "Main Rotor")
+	float MaxPitch = 35.0f;
+	
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
@@ -35,5 +41,6 @@ public:
 	//Interface method
 	UFUNCTION()
     virtual void UpdateRotor(float DPS) override;
-	
+
 };
+

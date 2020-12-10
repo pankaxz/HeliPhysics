@@ -17,7 +17,9 @@ class HELIPHYSICS_API UHeliTailRotor : public UActorComponent, public IHeliRotor
 
 public:	
 	UHeliTailRotor();
-
+	
+	float GetTailRotorMaxPitch();
+	
 protected:
 	virtual void BeginPlay() override;
 
@@ -26,6 +28,9 @@ protected:
 	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category= "Tail Rotor")
 	float TailRotationSpeedModifier = 1.5f;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category= "Main Rotor")
+	float MaxPitch = 45.0f;
 	
 public:	
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;

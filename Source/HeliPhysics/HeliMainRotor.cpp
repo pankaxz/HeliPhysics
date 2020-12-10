@@ -6,16 +6,20 @@
 
 UHeliMainRotor::UHeliMainRotor()
 {
-	
 	PrimaryComponentTick.bCanEverTick = true;
 }
 
 
+float UHeliMainRotor::GetMainRotorMaxPitch()
+{
+	return MaxPitch;
+}
+
 void UHeliMainRotor::BeginPlay()
 {
 	Super::BeginPlay();
-	
 	R22HeliPawn = Cast<AR22Heli_Pawn> (GetOwner());
+
 }
 
 
@@ -28,11 +32,20 @@ void UHeliMainRotor::TickComponent(float DeltaTime, ELevelTick TickType, FActorC
 
 void UHeliMainRotor::UpdateRotor(float DPS)
 {
-	// float LocalDPS =( DPS * 0.5f ) * GetWorld()->DeltaTimeSeconds;
-	
+
 	if(R22HeliPawn->SC_MainMastRotor)
 	{
-		R22HeliPawn->SC_MainMastRotor->AddLocalRotation((FRotator(0,(( DPS * MainRotationSpeedModifier ) * GetWorld()->DeltaTimeSeconds),0)));
+		R22HeliPawn->SC_MainMastRotor->AddLocalRotation((FRotator(0,
+					(( DPS * MainRotationSpeedModifier ) * GetWorld()->DeltaTimeSeconds), 0)));
+		
+		if (R22HeliPawn->SM_RMainBlade && R22HeliPawn->SM_LMainBlade)
+		{
+			R22HeliPawn->SM_LMainBlade->SetRelativeRotation((FRotator(
+				0, 0 , R22HeliPawn->GetCollectiveInput() * GetMainRotorMaxPitch() * -1.0 )));
+
+			R22HeliPawn->SM_RMainBlade->SetRelativeRotation((FRotator(
+				0, 0 , R22HeliPawn->GetCollectiveInput() * GetMainRotorMaxPitch() )));
+		}
 	}
 }
 

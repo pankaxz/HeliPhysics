@@ -14,6 +14,10 @@ UHeliTailRotor::UHeliTailRotor()
 	// ...
 }
 
+float UHeliTailRotor::GetTailRotorMaxPitch()
+{
+	return MaxPitch;
+}
 
 
 // Called when the game starts
@@ -40,6 +44,16 @@ void UHeliTailRotor::UpdateRotor(float DPS)
 	if(R22HeliPawn->SC_TailMastRotor)
 	{
 		R22HeliPawn->SC_TailMastRotor->AddLocalRotation((FRotator(0,0	,(( DPS *TailRotationSpeedModifier ) * GetWorld()->DeltaTimeSeconds))));
+
+		if (R22HeliPawn->SM_RTailBlade && R22HeliPawn->SM_LTailBlade)
+		{
+			R22HeliPawn->SM_LTailBlade->SetRelativeRotation((FRotator(
+                0, R22HeliPawn->GetPedalInput() * GetTailRotorMaxPitch() * -1.0 , 0 )));
+
+			R22HeliPawn->SM_RTailBlade->SetRelativeRotation((FRotator(
+                0, R22HeliPawn->GetPedalInput() * GetTailRotorMaxPitch() , 0 )));
+		}
 	}
 }
+
 

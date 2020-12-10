@@ -49,9 +49,22 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	USceneComponent* SC_TailMastRotor;
+
+	UPROPERTY()
+	UStaticMeshComponent* SM_RMainBlade;
+
+	UPROPERTY()
+	UStaticMeshComponent* SM_LMainBlade;
+
+	UPROPERTY()
+	UStaticMeshComponent* SM_RTailBlade;
+	
+	UPROPERTY()
+	UStaticMeshComponent* SM_LTailBlade; 
 	
 
 protected:
+	
 	virtual void BeginPlay() override;
 	
     UPROPERTY(EditDefaultsOnly,BlueprintReadOnly, Category="HeliPawn",  meta = (AllowProtectedAccess = "true"))
@@ -80,7 +93,9 @@ protected:
 	
 	UPROPERTY(EditDefaultsOnly)
 	USceneComponent* SC_HeliCenterOfMass;
+	
 
+	
 	//Actor Components
 	//
 	//
