@@ -35,7 +35,8 @@ AR22Heli_Pawn::AR22Heli_Pawn()
 
 	SC_MainMastRotor = CreateDefaultSubobject<USceneComponent>(TEXT("SC_MainMastRotor"));
 	SC_MainMastRotor->SetupAttachment(SC_Graphics);
-
+    SC_MainMastRotor->SetMobility(EComponentMobility::Movable);
+	
 	SC_TailMastRotor = CreateDefaultSubobject<USceneComponent>(TEXT("SC_TailMastRotor"));
 	SC_TailMastRotor->SetupAttachment(SC_Graphics);
 	

@@ -41,10 +41,10 @@ public:
 	FVector GetHeliCenterOfMass() const;
 
 	//Rotors 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	USceneComponent* SC_MainMastRotor;
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	USceneComponent* SC_TailMastRotor;
 	
 

@@ -22,6 +22,7 @@ void UHeliController::BeginPlay()
 void UHeliController::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
     Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+
 }
 
 

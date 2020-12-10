@@ -21,7 +21,6 @@ void UPawnPhysicsController::BeginPlay()
 	if(R22HeliPawn)
 	{
 		R22HeliPawn->GetHeliRootBody()->SetMassOverrideInKg(NAME_None, HeliWeight, true);
-		
 	}
 	
 }
@@ -33,6 +32,7 @@ void UPawnPhysicsController::TickComponent(float DeltaTime, ELevelTick TickType,
 	if(R22HeliPawn)
 	{
 		HandlePhysics();
+		
 	}
 	
 }

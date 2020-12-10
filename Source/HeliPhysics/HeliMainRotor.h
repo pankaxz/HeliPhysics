@@ -21,6 +21,7 @@ public:
 	
 	UPROPERTY()
 	AR22Heli_Pawn* R22HeliPawn;
+	
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;

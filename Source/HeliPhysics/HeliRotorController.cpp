@@ -10,12 +10,12 @@ UHeliRotorController::UHeliRotorController()
 {
 
 	PrimaryComponentTick.bCanEverTick = true;
-	R22HeliPawn = Cast<AR22Heli_Pawn> (GetOwner());
 }
 
 void UHeliRotorController::BeginPlay()
 {
 	Super::BeginPlay();
+	R22HeliPawn = Cast<AR22Heli_Pawn> (GetOwner());
 	
 	for(UActorComponent* Component : R22HeliPawn->HeliActorComponents)
 	{
@@ -33,7 +33,6 @@ void UHeliRotorController::BeginPlay()
 void UHeliRotorController::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
 }
 
 void UHeliRotorController::UpdateRotors(float CurrentRPM)
@@ -48,6 +47,8 @@ void UHeliRotorController::UpdateRotors(float CurrentRPM)
 		{
 			if (IHeliRotorInterface* HeliRotorInterface = Cast<IHeliRotorInterface>(Rotor))
 			{ 
+				GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red,
+					FString::Printf(TEXT("Calculated DPS at controller %f"), DPS));
 				HeliRotorInterface->UpdateRotor(DPS);
 			} 
 		}
