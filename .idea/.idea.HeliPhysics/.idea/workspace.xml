@@ -24,13 +24,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="741f8425-4cc2-4f16-a1f1-e2ea537af92b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Content/ExampleContent/Materials/Materials/MF_RadialMotionBlurPair.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/ExampleContent/Materials/Materials/MF_RadialMotionBlurSample.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/ExampleContent/Materials/Materials/MF_Rotate2D.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/ExampleContent/Materials/Materials/M_RadialMotionBlur.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/ExampleContent/Materials/Materials/M_RadialMotionBlur_Inst.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/M_R22Cockpit.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/MainRotorBlur/mainRotor_blur_lod001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/MainRotorBlur/mainRotor_blur_lod001.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/MainRotorBlur/mainRotor_blur_lod002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/MainRotorBlur/mainRotor_blur_lod002.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/MainRotorBlur/mainRotor_blur_lod003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/MainRotorBlur/mainRotor_blur_lod003.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/MainRotorBlur/mainRotor_blur_lod004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/MainRotorBlur/mainRotor_blur_lod004.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/MainRotorBlur/mainRotor_blur_lod005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/MainRotorBlur/mainRotor_blur_lod005.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/MainRotorBlur/mainRotor_blur_lod006.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/MainRotorBlur/mainRotor_blur_lod006.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/MainRotorBlur/mainRotor_blur_lod007.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/MainRotorBlur/mainRotor_blur_lod007.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/MainRotorBlur/mainRotor_blur_lod008.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/MainRotorBlur/mainRotor_blur_lod008.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/MainRotorBlur/mainRotor_blur_lod009.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/MainRotorBlur/mainRotor_blur_lod009.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/MainRotorBlur/mainRotor_blur_lod010.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/MainRotorBlur/mainRotor_blur_lod010.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/TailRotorBlur/tailRotor_blur_lod001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/TailRotorBlur/tailRotor_blur_lod001.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/TailRotorBlur/tailRotor_blur_lod002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/TailRotorBlur/tailRotor_blur_lod002.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/TailRotorBlur/tailRotor_blur_lod003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/TailRotorBlur/tailRotor_blur_lod003.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/TailRotorBlur/tailRotor_blur_lod004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/TailRotorBlur/tailRotor_blur_lod004.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/TailRotorBlur/tailRotor_blur_lod005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/TailRotorBlur/tailRotor_blur_lod005.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/TailRotorBlur/tailRotor_blur_lod006.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/TailRotorBlur/tailRotor_blur_lod006.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/TailRotorBlur/tailRotor_blur_lod007.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/TailRotorBlur/tailRotor_blur_lod007.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/TailRotorBlur/tailRotor_blur_lod008.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/TailRotorBlur/tailRotor_blur_lod008.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/TailRotorBlur/tailRotor_blur_lod009.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/TailRotorBlur/tailRotor_blur_lod009.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/TailRotorBlur/tailRotor_blur_lod010.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/R22Heli/TailRotorBlur/tailRotor_blur_lod010.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/HP_Test/Art/Meshes/SM_AssetPlatform.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/BP_R22Heli_Pawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/BP_R22Heli_Pawn.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/HP_Test/Maps/TestMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Test/Maps/TestMap.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliController.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliMainRotor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliMainRotor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliMainRotor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliMainRotor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliTailRotor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliTailRotor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliTailRotor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliTailRotor.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" afterDir="false" />
     </list>
@@ -72,21 +122,23 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.h" />
-      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliController.h" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliRotorInterface.h" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliRotorInterface.cpp" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.h" />
-      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliController.cpp" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.cpp" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliRotorController.h" />
-      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.cpp" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliRotorController.cpp" />
-      <option value="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" />
-      <option value="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliMainRotor.h" />
-      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliMainRotor.cpp" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliTailRotor.h" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliTailRotor.cpp" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliMainRotor.cpp" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.h" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.cpp" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliController.h" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliController.cpp" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.cpp" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1kqQGakhNVyaNl2sAG2eTklTnvT" />
@@ -447,7 +499,8 @@
       <workItem from="1607449924416" duration="2062000" />
       <workItem from="1607452076129" duration="8913000" />
       <workItem from="1607536777699" duration="11018000" />
-      <workItem from="1607622058452" duration="9741000" />
+      <workItem from="1607622058452" duration="10155000" />
+      <workItem from="1607718448659" duration="5956000" />
     </task>
     <task id="LOCAL-00001" summary="Added PawnController">
       <created>1606682743906</created>

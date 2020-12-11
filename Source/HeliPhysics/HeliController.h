@@ -11,6 +11,7 @@
 
 class UHeliEngine;
 class UHeliRotorController;
+class UHeliCharacteristics;
 
 UCLASS()
 class HELIPHYSICS_API UHeliController : public UPawnPhysicsController
@@ -23,7 +24,7 @@ class HELIPHYSICS_API UHeliController : public UPawnPhysicsController
 protected:
 	
 	virtual void BeginPlay() override;
-
+	
 	UFUNCTION(BlueprintCallable)
 	virtual void HandleEngine();
 
@@ -31,7 +32,7 @@ protected:
 	virtual void HandleRotors();
 	
 	UFUNCTION(BlueprintCallable)
-	virtual void HandleCharacteristics();
+	virtual void HandleCharacteristics(AR22Heli_Pawn* R22Heli_Pawn);
 
 	
 	
@@ -40,14 +41,19 @@ public:
 
 	virtual void HandlePhysics() override;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Pawn Physics Controller")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Heli Controller")
 	TArray<UHeliEngine*> EngineArray;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Pawn Physics Controller")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Heli Controller")
 	UHeliEngine* HeliEngine;
 
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Pawn Physics Controller")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Heli Controller")
 	UHeliRotorController* HeliRotorController;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Heli Controller")
+	UHeliCharacteristics*  HeliCharacteristics;
+
+
 	
 };

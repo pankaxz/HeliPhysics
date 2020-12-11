@@ -2,6 +2,7 @@
 #include "HeliController.h"
 #include "HeliEngine.h"
 #include "HeliRotorController.h"
+#include "HeliCharacteristics.h"
 #include "R22Heli_Pawn.h"
 
 UHeliController::UHeliController()
@@ -9,13 +10,15 @@ UHeliController::UHeliController()
     PrimaryComponentTick.bCanEverTick = true;
 
 }
+
 void UHeliController::BeginPlay()
 {
     Super::BeginPlay();
     
     HeliEngine = GetOwner()->FindComponentByClass<UHeliEngine>();
     HeliRotorController = GetOwner()->FindComponentByClass<UHeliRotorController>();
-    
+    HeliCharacteristics = GetOwner()->FindComponentByClass<UHeliCharacteristics>();
+   
     EngineArray.Add(HeliEngine);
 }
 
@@ -32,7 +35,7 @@ void UHeliController::HandlePhysics()
 
     HandleEngine();
     HandleRotors();
-    HandleCharacteristics();
+    HandleCharacteristics(R22HeliPawn);
 }
 
 
@@ -59,10 +62,14 @@ void UHeliController::HandleRotors()
     }
 }
 
-void UHeliController::HandleCharacteristics()
+void UHeliController::HandleCharacteristics(AR22Heli_Pawn* R22Heli_Pawn)
 {
+    if(HeliCharacteristics)
+    {
+        HeliCharacteristics->UpdateCharacteristics(R22Heli_Pawn);
+    }
+    
 }
-
 
 
 

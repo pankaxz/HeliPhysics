@@ -41,10 +41,10 @@ void UHeliMainRotor::UpdateRotor(float DPS)
 		if (R22HeliPawn->SM_RMainBlade && R22HeliPawn->SM_LMainBlade)
 		{
 			R22HeliPawn->SM_LMainBlade->SetRelativeRotation((FRotator(
-				0, 0 , R22HeliPawn->GetCollectiveInput() * GetMainRotorMaxPitch() * -1.0 )));
+				0, 0 , R22HeliPawn->GetStickyCollectiveInput() * GetMainRotorMaxPitch() )));
 
 			R22HeliPawn->SM_RMainBlade->SetRelativeRotation((FRotator(
-				0, 0 , R22HeliPawn->GetCollectiveInput() * GetMainRotorMaxPitch() )));
+				0, 0 , R22HeliPawn->GetStickyCollectiveInput() * GetMainRotorMaxPitch() * -1.0 )));
 		}
 	}
 }

@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+
 #include "GameFramework/Pawn.h"
 #include "R22Heli_Pawn.generated.h"
 
@@ -16,6 +17,7 @@ class UHeliController;
 class UHeliRotorController;
 class UHeliMainRotor;
 class UHeliTailRotor;
+class UHeliCharacteristics;
 
 		// GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green,
 		// 	FString::Printf(TEXT("DPS At Main Rotor %f"), LocalDPS));
@@ -37,7 +39,10 @@ public:
 	float GetStickyThrottleInput() const;
 	
 	float GetPedalInput() const;
-	float GetCollectiveInput() const;
+	
+	float GetRawCollectiveInput() const;
+	float GetStickyCollectiveInput() const;
+	
 	
 	FVector2D GetCyclicInput() const;
 	UStaticMeshComponent* GetHeliRootBody() const;
@@ -121,11 +126,14 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	UHeliTailRotor*  HeliTailRotor;
 
-public:	
-	// Called every frame
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UHeliCharacteristics*  HeliCharacteristics;
+
+
+public:
+	
 	virtual void Tick(float DeltaTime) override;
 
-	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
@@ -137,10 +145,15 @@ private:
 
 	void SetHorizontalInput(float AxisValue);
 	void SetVerticalInput(float AxisValue);
+	
 	void SetRawThrottleInput(float AxisValue);
 	void SetStickyThrottleInput();
+	
 	void SetPedalInput(float AxisValue);
-	void SetCollectiveInput(float AxisValue);
+	
+	void SetRawCollectiveInput(float AxisValue);
+	void SetStickyCollectiveInput();
+	
 	void SetCyclicInput();
 	
 	//Input Variables
@@ -157,7 +170,7 @@ private:
 
 	//Sticky Throttle Input 
 	UPROPERTY(VisibleAnywhere, Category = "InputTest")
-	float StickyThrottle = 0.0f;
+	float StickyThrottleInput = 0.0f;
 
 	//Pedal Input - right left
 	UPROPERTY(VisibleAnywhere, Category = "InputTest")
@@ -166,6 +179,9 @@ private:
 	//Collective Input - up down
 	UPROPERTY(VisibleAnywhere, Category = "InputTest")
 	float CollectiveInput = 0.0f;
+	
+	UPROPERTY(VisibleAnywhere, Category = "InputTest")
+	float StickyCollectiveInput = 0.0f;
 	
 	// Cyclic input - X = Horizontal Input			
 	// Cyclic input - Y = Vertical Input			

@@ -2,6 +2,8 @@
 
 
 #include "R22Heli_Pawn.h"
+
+#include "HeliCharacteristics.h"
 #include "HeliController.h"
 #include "PawnPhysicsController.h"
 #include "HeliEngine.h"
@@ -122,6 +124,11 @@ AR22Heli_Pawn::AR22Heli_Pawn()
 	HeliTailRotor = CreateDefaultSubobject<UHeliTailRotor>(TEXT("Heli Tail Rotor"));
 	AddOwnedComponent(HeliTailRotor);
 	HeliTailRotor->ComponentTags.Add(FName("ActorComponentScript"));
+
+
+	HeliCharacteristics = CreateDefaultSubobject<UHeliCharacteristics>(TEXT("Heli Characterstics"));
+	AddOwnedComponent(HeliCharacteristics);
+	HeliCharacteristics->ComponentTags.Add(FName("ActorComponentScript"));
 	
 	HeliActorComponents = GetComponentsByTag(UActorComponent::StaticClass(),FName("ActorComponentScript"));
 }
@@ -154,7 +161,7 @@ void AR22Heli_Pawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 		PlayerInputComponent->BindAxis(TEXT("Horizontal"), this, &AR22Heli_Pawn::SetHorizontalInput);
 		PlayerInputComponent->BindAxis(TEXT("Vertical"), this, &AR22Heli_Pawn::SetVerticalInput);
 		PlayerInputComponent->BindAxis(TEXT("Throttle"), this, &AR22Heli_Pawn::SetRawThrottleInput);
-		PlayerInputComponent->BindAxis(TEXT("Collective"), this, &AR22Heli_Pawn::SetCollectiveInput);
+		PlayerInputComponent->BindAxis(TEXT("Collective"), this, &AR22Heli_Pawn::SetRawCollectiveInput);
 		PlayerInputComponent->BindAxis(TEXT("Pedal"), this, &AR22Heli_Pawn::SetPedalInput);
 	
 }
@@ -179,8 +186,8 @@ void AR22Heli_Pawn::SetRawThrottleInput(float AxisValue)
 
 void AR22Heli_Pawn::SetStickyThrottleInput()
 {
-	StickyThrottle += GetRawThrottleInput() * GetWorld()->GetDeltaSeconds();
-	StickyThrottle = FMath::Clamp(StickyThrottle,0.0f,1.0f);
+	StickyThrottleInput += GetRawThrottleInput() * GetWorld()->GetDeltaSeconds();
+	StickyThrottleInput = FMath::Clamp(StickyThrottleInput,0.0f,1.0f);
 }
 
 void AR22Heli_Pawn::SetPedalInput(float AxisValue)
@@ -188,9 +195,16 @@ void AR22Heli_Pawn::SetPedalInput(float AxisValue)
 	PedalInput = AxisValue;
 }
 
-void AR22Heli_Pawn::SetCollectiveInput(float AxisValue)
+void AR22Heli_Pawn::SetRawCollectiveInput(float AxisValue)
 {
 	CollectiveInput = AxisValue;
+	SetStickyCollectiveInput();
+}
+
+void AR22Heli_Pawn::SetStickyCollectiveInput()
+{
+	StickyCollectiveInput += GetRawCollectiveInput() * -1.0 * GetWorld()->GetDeltaSeconds();
+	StickyCollectiveInput = FMath::Clamp(StickyCollectiveInput,0.0f,1.0f);
 }
 
 void AR22Heli_Pawn::SetCyclicInput()
@@ -219,7 +233,7 @@ float AR22Heli_Pawn::GetRawThrottleInput() const
 
 float AR22Heli_Pawn::GetStickyThrottleInput() const
 {
-	return StickyThrottle;
+	return StickyThrottleInput;
 }
 
 float AR22Heli_Pawn::GetPedalInput() const
@@ -227,9 +241,14 @@ float AR22Heli_Pawn::GetPedalInput() const
 	return PedalInput;
 }
 
-float AR22Heli_Pawn::GetCollectiveInput() const
+float AR22Heli_Pawn::GetRawCollectiveInput() const
 {
 	return CollectiveInput;
+}
+
+float AR22Heli_Pawn::GetStickyCollectiveInput() const
+{
+	return StickyCollectiveInput;
 }
 
 FVector2D AR22Heli_Pawn::GetCyclicInput() const
