@@ -20,18 +20,9 @@ public:
 	UPawnPhysicsController();
 
 	//variables
-
-	// UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pawn Physics Controller")
-	// float MaxSpeed = 1.0f;
-	//
-	// UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pawn Physics Controller")
-	// FVector MovementDirection = FVector(0.0f,0.0f,0.0f);
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pawn Physics Controller")
-	FVector HeliCenterOfMass;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Pawn Physics Controller")
-	float HeliWeight = 10.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pawn Physics Controller")
+	float HeliWeight = 16490.0f;
 
 	
 	UFUNCTION()

@@ -7,6 +7,7 @@ UPawnPhysicsController::UPawnPhysicsController()
 {
 
 	PrimaryComponentTick.bCanEverTick = true;
+
 	
 }
 
@@ -16,13 +17,11 @@ void UPawnPhysicsController::BeginPlay()
 	Super::BeginPlay();
 
 	R22HeliPawn = Cast<AR22Heli_Pawn> (GetOwner());
-	HeliCenterOfMass = R22HeliPawn->GetHeliCenterOfMass();
-	
-	if(R22HeliPawn)
-	{
-		R22HeliPawn->GetHeliRootBody()->SetMassOverrideInKg(NAME_None, HeliWeight, true);
-	}
-	
+	// if(R22HeliPawn)
+	// {
+	// 	R22HeliPawn->GetHeliRootBody()->GetBodyInstance()->SetMassOverride(HeliWeight, true);
+	// }
+	//
 }
 
 void UPawnPhysicsController::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -31,8 +30,26 @@ void UPawnPhysicsController::TickComponent(float DeltaTime, ELevelTick TickType,
 	
 	if(R22HeliPawn)
 	{
-		HandlePhysics();
 		
+		//R22HeliPawn->GetHeliRootBody()->SetCenterOfMass(HeliCenterOfMass);
+		
+		//body instance
+		// R22HeliPawn->GetHeliRootBody()->GetBodyInstance()->COMNudge = FVector(HeliCenterOfMass);
+
+		// meshComp->SetCenterOfMass(meshComp->GetBodyInstance()->GetCOMPosition() - meshComp->GetBodyInstance()->GetCOMPosition());
+		// meshComp->GetBodyInstance()->COMNudge = GetActorLocation() - meshComp->GetBodyInstance()->GetCOMPosition();
+		// meshComp->GetBodyInstance()->UpdateMassProperties();
+
+		//
+		// R22HeliPawn->GetHeliRootBody()->GetBodyInstance()->COMNudge = FVector(HeliCenterOfMass);
+		// R22HeliPawn->GetHeliRootBody()->GetBodyInstance()->UpdateMassProperties();
+		//
+		// GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green,
+		//    FString::Printf(TEXT("HeliCenterOfMass : %s"),
+		//    	(*R22HeliPawn->GetHeliRootBody()->GetBodyInstance()->GetCOMPosition().ToString() )));
+
+		
+		HandlePhysics();
 	}
 	
 }

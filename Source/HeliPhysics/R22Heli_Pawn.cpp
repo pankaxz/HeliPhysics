@@ -3,6 +3,8 @@
 
 #include "R22Heli_Pawn.h"
 
+
+#include "DrawDebugHelpers.h"
 #include "HeliCharacteristics.h"
 #include "HeliController.h"
 #include "PawnPhysicsController.h"
@@ -27,6 +29,12 @@ AR22Heli_Pawn::AR22Heli_Pawn()
 	SM_RootBody->SetCollisionResponseToAllChannels(ECR_Ignore);
 	//SM_PhysicsBox->SetCollisionResponseToChannel(ECC_WorldStatic, ECR_Block);
 	
+	// //Setup Center of mass for PawnPhysicsController
+	// Col_COM = CreateDefaultSubobject<UCapsuleComponent>(TEXT("COL_COM"));
+	// RootComponent = Col_COM;
+	// Col_COM->SetCapsuleRadius(1.0f);
+	// Col_COM->SetCapsuleHalfHeight(1.0f);
+
 
 	//Graphics group
 	SC_Graphics = CreateDefaultSubobject<USceneComponent>(TEXT("SC_Graphics"));
@@ -83,19 +91,19 @@ AR22Heli_Pawn::AR22Heli_Pawn()
 	Col_RSkid->SetCollisionObjectType(ECollisionChannel::ECC_Vehicle);
 	Col_RSkid->SetCollisionResponseToAllChannels(ECR_Block);
 
+		
 	//Setup Center of mass for PawnPhysicsController
-	SC_HeliCenterOfMass = CreateDefaultSubobject<USceneComponent>(TEXT("Center of Mass"));
-	SC_HeliCenterOfMass->SetupAttachment(SM_RootBody);
-	
+	HeliPhysicsHandler = CreateDefaultSubobject<UCapsuleComponent>(TEXT("COL_CenterOfMass"));
+	HeliPhysicsHandler->SetupAttachment(SM_RootBody);
+	HeliPhysicsHandler->SetCapsuleRadius(1.0f);
+	HeliPhysicsHandler->SetCapsuleHalfHeight(1.0f);
+
 	// Take control of the default player
 	AutoPossessPlayer = EAutoReceiveInput::Player0;
-
-
 	
 	PawnPhysicsControllerVar = CreateDefaultSubobject<UPawnPhysicsController>(TEXT("Pawn Contoroller"));
 	AddOwnedComponent(PawnPhysicsControllerVar);
 	PawnPhysicsControllerVar->ComponentTags.Add(FName("ActorComponentScript"));
-
 
 	
 	HeliController = CreateDefaultSubobject<UHeliController>(TEXT("Heli Controller"));
@@ -150,6 +158,8 @@ void AR22Heli_Pawn::BeginPlay()
 void AR22Heli_Pawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	FBodyInstance *Body = GetHeliRootBody()->GetBodyInstance();
+	DrawDebugSphere(GetWorld(), Body->GetCOMPosition(), 5.0f, 32, FColor::Yellow);
 	
 }
 
@@ -261,8 +271,8 @@ UStaticMeshComponent* AR22Heli_Pawn::GetHeliRootBody() const
 	return SM_RootBody;
 }
 
-FVector AR22Heli_Pawn::GetHeliCenterOfMass() const
+FBodyInstance* AR22Heli_Pawn::GetPhysicsFBodyInstance()
 {
-	FVector HeliCenterOfMassLocation = SC_HeliCenterOfMass->GetComponentLocation();
-	return HeliCenterOfMassLocation;
+	PhysicsFBodyHandler = HeliPhysicsHandler->GetBodyInstance();
+	return  PhysicsFBodyHandler;
 }

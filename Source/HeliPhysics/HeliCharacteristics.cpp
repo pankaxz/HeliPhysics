@@ -26,15 +26,22 @@ void UHeliCharacteristics::BeginPlay()
 //Todo : Force working weird. Mass is not getting registered via code
 void UHeliCharacteristics::HandleLift(AR22Heli_Pawn* R22Heli_Pawn)
 {
-	FVector LiftForce = R22Heli_Pawn->GetActorUpVector() * -1.0 * GetWorld()->GetGravityZ() * R22Heli_Pawn->GetHeliRootBody()->GetMass();
-	R22Heli_Pawn->GetHeliRootBody()->AddForce(LiftForce, NAME_None, false);
+	//todo : dix the weight.
+	
+	FVector LiftForce = R22Heli_Pawn->GetActorUpVector() * -1.0 * GetWorld()->GetGravityZ() * (1200 + 0.005);
+		// R22Heli_Pawn->GetPhysicsFBodyInstance()->GetBodyMass();//
+	
+	R22Heli_Pawn->GetPhysicsFBodyInstance()->AddForce(LiftForce, true, false);
 
+
+
+	
 	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green,
-		FString::Printf(TEXT("Weight in KG : %f"), R22Heli_Pawn->GetHeliRootBody()->GetMass()));
-
+		FString::Printf(TEXT("Weight in KG : %f"), R22Heli_Pawn->GetHeliRootBody()->GetBodyInstance()->GetBodyMass()));
+ 
 	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue,
 		FString::Printf(TEXT("Lift Force : %f  ,   %f ,  %f"),LiftForce.X, LiftForce.Y, LiftForce.Z));
-
+ 
 	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue,
         FString::Printf(TEXT("Lift Force size : %f"),LiftForce.Size()));
 

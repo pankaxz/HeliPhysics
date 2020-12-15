@@ -33,7 +33,6 @@ protected:
 	
 	UFUNCTION(BlueprintCallable)
 	virtual void HandleCharacteristics(AR22Heli_Pawn* R22Heli_Pawn);
-
 	
 	
 public:

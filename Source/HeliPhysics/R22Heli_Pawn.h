@@ -46,7 +46,7 @@ public:
 	
 	FVector2D GetCyclicInput() const;
 	UStaticMeshComponent* GetHeliRootBody() const;
-	FVector GetHeliCenterOfMass() const;
+	FBodyInstance* GetPhysicsFBodyInstance();
 
 	//Rotors 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
@@ -67,7 +67,6 @@ public:
 	UPROPERTY()
 	UStaticMeshComponent* SM_LTailBlade; 
 	
-
 protected:
 	
 	virtual void BeginPlay() override;
@@ -95,11 +94,15 @@ protected:
     
     UPROPERTY(EditDefaultsOnly)
     UCapsuleComponent* Col_Fuselage;
-	
-	UPROPERTY(EditDefaultsOnly)
-	USceneComponent* SC_HeliCenterOfMass;
-	
 
+	/*
+	 *The center of mass is being set by a dummy collider with custom collisions. It work well with the way I want to move the COM.
+	 *Physics FBodyHandler is the body isntance for it.
+	 */
+	UPROPERTY(EditDefaultsOnly)
+	UCapsuleComponent* HeliPhysicsHandler;
+
+	FBodyInstance* PhysicsFBodyHandler;
 	
 	//Actor Components
 	//
