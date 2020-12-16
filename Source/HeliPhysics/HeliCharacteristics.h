@@ -7,6 +7,8 @@
 #include "HeliCharacteristics.generated.h"
 
 class AR22Heli_Pawn;
+class UHeliMainRotor;
+
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class HELIPHYSICS_API UHeliCharacteristics : public UActorComponent
 {
@@ -18,6 +20,9 @@ public:
 
 	UFUNCTION()
 	virtual void UpdateCharacteristics(AR22Heli_Pawn* R22Heli_Pawn);
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Lift Properties")
+	float MaxLiftForce = 100.0f;
 
 protected:
 	// Called when the game starts
@@ -31,6 +36,9 @@ protected:
 
 	UFUNCTION()
     virtual void HandlePedals(AR22Heli_Pawn* R22Heli_Pawn);
+
+	UPROPERTY()
+	UHeliMainRotor* HeliMainRotor;
 
 public:	
 	// Called every frame

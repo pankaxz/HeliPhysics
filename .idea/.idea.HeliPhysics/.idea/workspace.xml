@@ -25,14 +25,11 @@
   <component name="ChangeListManager">
     <list default="true" id="741f8425-4cc2-4f16-a1f1-e2ea537af92b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/BP_R22Heli_Pawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/BP_R22Heli_Pawn.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/HP_Test/Maps/TestMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Test/Maps/TestMap.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliMainRotor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliMainRotor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliMainRotor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliMainRotor.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,25 +48,28 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Engine/Private/Actor.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Core/Private/Math/UnrealMath.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Engine/Classes/Engine/EngineTypes.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Engine/Private/ActorConstruction.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Core/Public/Containers/Array.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/CoreUObject/Public/UObject/Object.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Core/Public/Templates/PointerIsConvertibleFromTo.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.26.28801/include/cstdlib" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/HeliPhysics/HeliController.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Core/Public/UObject/UnrealNames.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Core/Public/Math/Rotator.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/CoreUObject/Private/UObject/Obj.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Core/Private/Math/UnrealMath.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/CoreUObject/Public/UObject/Class.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/ucrt/corecrt_math.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Engine/Private/UnrealEngine.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Engine/Private/Components/SceneComponent.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Engine/Private/EngineTypes.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/CoreUObject/Public/UObject/UObjectGlobals.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Engine/Classes/Components/SceneComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Engine/Private/PrimitiveComponentPhysics.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Engine/Private/PhysicsEngine/BodyInstance.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/HeliPhysics/HeliController.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Core/Public/UObject/UnrealNames.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/CoreUObject/Public/Templates/SubclassOf.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Core/Public/Math/Rotator.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/CoreUObject/Private/UObject/Obj.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Engine/Classes/PhysicsEngine/BodyInstance.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -80,19 +80,19 @@
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.h" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliRotorController.h" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliRotorController.cpp" />
-      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliMainRotor.h" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliTailRotor.h" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliTailRotor.cpp" />
-      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliMainRotor.cpp" />
-      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.h" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.cpp" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliController.cpp" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.h" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.cpp" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliController.h" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" />
-      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.cpp" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliMainRotor.h" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.h" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.cpp" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliMainRotor.cpp" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1kqQGakhNVyaNl2sAG2eTklTnvT" />
@@ -456,7 +456,8 @@
       <workItem from="1607622058452" duration="10155000" />
       <workItem from="1607718448659" duration="5956000" />
       <workItem from="1607968234778" duration="8489000" />
-      <workItem from="1608053276046" duration="11768000" />
+      <workItem from="1608053276046" duration="11794000" />
+      <workItem from="1608140986530" duration="8496000" />
     </task>
     <task id="LOCAL-00001" summary="Added PawnController">
       <created>1606682743906</created>

@@ -33,6 +33,9 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category= "Main Rotor")
 	float MaxPitch = 35.0f;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category= "Main Rotor")
+	float CurrentRPMs = 35.0f;
 	
 public:	
 	// Called every frame
@@ -41,6 +44,9 @@ public:
 	//Interface method
 	UFUNCTION()
     virtual void UpdateRotor(float DPS) override;
+
+	UFUNCTION()
+	float GetCurrentRPMs();
 
 };
 
