@@ -21,9 +21,16 @@ public:
 	UFUNCTION()
 	virtual void UpdateCharacteristics(AR22Heli_Pawn* R22Heli_Pawn);
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Lift Properties")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
 	float MaxLiftForce = 100.0f;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
+	float TailForce = 2.0f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
+	float CyclicForce = 2.0f;
+
+	FQuat myActorQuat; 
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
