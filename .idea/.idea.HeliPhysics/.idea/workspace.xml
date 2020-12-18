@@ -25,9 +25,15 @@
   <component name="ChangeListManager">
     <list default="true" id="741f8425-4cc2-4f16-a1f1-e2ea537af92b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultInput.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultInput.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/HP_Main/Art/Materials/R22_MainRotor_Mechanical_LBlade_Geo.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Main/Art/Materials/R22_MainRotor_Mechanical_LBlade_Geo.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/HP_Main/Art/Materials/R22_MainRotor_Mechanical_RBlade_Geo.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Main/Art/Materials/R22_MainRotor_Mechanical_RBlade_Geo.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/BP_R22Heli_Pawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/BP_R22Heli_Pawn.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/HP_Test/Maps/TestMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Test/Maps/TestMap.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliMainRotor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliMainRotor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliTailRotor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliTailRotor.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +88,6 @@
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliRotorController.h" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliRotorController.cpp" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliTailRotor.h" />
-      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliTailRotor.cpp" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliEngine.cpp" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliController.cpp" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/PawnPhysicsController.h" />
@@ -91,6 +96,7 @@
       <option value="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.cpp" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/R22Heli_Pawn.h" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliMainRotor.h" />
+      <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliTailRotor.cpp" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliMainRotor.cpp" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.h" />
       <option value="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.cpp" />
@@ -460,6 +466,7 @@
       <workItem from="1608053276046" duration="11794000" />
       <workItem from="1608140986530" duration="8496000" />
       <workItem from="1608223504236" duration="6691000" />
+      <workItem from="1608319234536" duration="5090000" />
     </task>
     <task id="LOCAL-00001" summary="Added PawnController">
       <created>1606682743906</created>

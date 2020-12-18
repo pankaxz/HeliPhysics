@@ -45,9 +45,9 @@ void UHeliMainRotor::UpdateRotor(float DPS)
 		R22HeliPawn->SC_MainMastRotor->AddLocalRotation((FRotator(0,
 					(( DPS * MainRotationSpeedModifier) * GetWorld()->DeltaTimeSeconds), 0)));
 
-		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue,
-                    FString::Printf(TEXT("DPS : %f"),
-                        (DPS * MainRotationSpeedModifier)));
+		// GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue,
+  //                   FString::Printf(TEXT("DPS : %f"),
+  //                       (DPS * MainRotationSpeedModifier)));
 
 
 		

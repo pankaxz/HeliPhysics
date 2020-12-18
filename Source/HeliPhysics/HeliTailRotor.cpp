@@ -43,7 +43,7 @@ void UHeliTailRotor::UpdateRotor(float DPS)
 	//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Black, FString::Printf(TEXT("Updating Tail Rotor")));
 	if(R22HeliPawn->SC_TailMastRotor)
 	{
-		R22HeliPawn->SC_TailMastRotor->AddLocalRotation((FRotator(0,0	,(( DPS *TailRotationSpeedModifier ) * GetWorld()->DeltaTimeSeconds))));
+		R22HeliPawn->SC_TailMastRotor->AddLocalRotation((FRotator(0,0	,(( DPS *TailRotationSpeedModifier )*GetWorld()->DeltaTimeSeconds))));
 
 		if (R22HeliPawn->SM_RTailBlade && R22HeliPawn->SM_LTailBlade)
 		{
