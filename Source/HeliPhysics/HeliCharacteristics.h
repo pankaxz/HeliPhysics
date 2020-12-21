@@ -60,7 +60,7 @@ protected:
     void AutoLevel();
 
 	UPROPERTY()
-	FVector FlatFwd;
+	FRotator FlatFwd;
 
 	UPROPERTY()
 	FVector FlatRight;

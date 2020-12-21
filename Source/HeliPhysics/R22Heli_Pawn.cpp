@@ -12,6 +12,7 @@
 #include "HeliRotorController.h"
 #include "HeliMainRotor.h"
 #include "HeliTailRotor.h"
+#include "Components/ArrowComponent.h"
 #include "Components/CapsuleComponent.h"
 
 // Sets default values
@@ -151,7 +152,8 @@ void AR22Heli_Pawn::BeginPlay()
 	SM_LMainBlade = Cast<UStaticMeshComponent>(GetDefaultSubobjectByName(TEXT("R22_MainRotor_Mechanical_LBlade_Geo")));
 	SM_RTailBlade = Cast<UStaticMeshComponent>(GetDefaultSubobjectByName(TEXT("R22_Mechanical_RTailBlade_Geo")));
 	SM_LTailBlade = Cast<UStaticMeshComponent>(GetDefaultSubobjectByName(TEXT("R22_Mechanical_LTailBlade_Geo")));
-	
+	ForwardArrow = Cast<UArrowComponent>(GetDefaultSubobjectByName(TEXT("Forward")));
+	RightArrow = Cast<UArrowComponent>(GetDefaultSubobjectByName(TEXT("Right")));
 }
 
 

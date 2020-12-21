@@ -7,7 +7,6 @@
 #include "GameFramework/Pawn.h"
 #include "R22Heli_Pawn.generated.h"
 
-
 //classes
 class UCapsuleComponent;
 class UInputController;
@@ -18,6 +17,7 @@ class UHeliRotorController;
 class UHeliMainRotor;
 class UHeliTailRotor;
 class UHeliCharacteristics;
+class UArrowComponent;
 
 		// GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green,
 		// 	FString::Printf(TEXT("DPS At Main Rotor %f"), LocalDPS));
@@ -65,8 +65,13 @@ public:
 	UStaticMeshComponent* SM_RTailBlade;
 	
 	UPROPERTY()
-	UStaticMeshComponent* SM_LTailBlade; 
-	
+	UStaticMeshComponent* SM_LTailBlade;
+
+	UPROPERTY()
+	UArrowComponent* ForwardArrow; 
+
+	UPROPERTY()
+	UArrowComponent* RightArrow;
 protected:
 	
 	virtual void BeginPlay() override;

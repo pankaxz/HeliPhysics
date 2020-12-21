@@ -7,6 +7,7 @@
 #include "GenericPlatform/GenericPlatformMath.h"
 #include "HeliMainRotor.h"
 #include "R22Heli_Pawn.h"
+#include "Components/ArrowComponent.h"
 
 UHeliCharacteristics::UHeliCharacteristics()
 {
@@ -20,6 +21,7 @@ void UHeliCharacteristics::UpdateCharacteristics(AR22Heli_Pawn* R22Heli_Pawn)
 	HandlePedals(R22Heli_Pawn);
 
 	CalculateLevel(R22Heli_Pawn);
+	
 	AutoLevel();
 
 	myActorQuat= GetOwner()->GetActorQuat();
@@ -57,11 +59,11 @@ void UHeliCharacteristics::HandleLift(AR22Heli_Pawn* R22Heli_Pawn)
 void UHeliCharacteristics::HandleCyclic(AR22Heli_Pawn* R22Heli_Pawn)
 {
 	
-	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue,
-		FString::Printf(TEXT("input X: %f"),R22Heli_Pawn->GetCyclicInput().X ));
-	
-	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue,
-		FString::Printf(TEXT("input Y: %f"),R22Heli_Pawn->GetCyclicInput().Y ));
+	// GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue,
+	// 	FString::Printf(TEXT("input X: %f"),R22Heli_Pawn->GetCyclicInput().X ));
+	//
+	// GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue,
+	// 	FString::Printf(TEXT("input Y: %f"),R22Heli_Pawn->GetCyclicInput().Y ));
 
 	
 	float CyclicXForce = R22Heli_Pawn->GetCyclicInput().X * CyclicForce;
@@ -85,13 +87,13 @@ void UHeliCharacteristics::HandlePedals(AR22Heli_Pawn* R22Heli_Pawn)
 void UHeliCharacteristics::CalculateLevel(AR22Heli_Pawn* R22Heli_Pawn)
 {
 	//calculate the flat forward
-	FlatFwd = FVector::ForwardVector;
-	FlatFwd.Z = 0.0f;
-	FlatFwd.Normalize();
-	
-	DrawDebugLine(GetWorld(), R22Heli_Pawn->GetPhysicsFBodyInstance()->GetCOMPosition() * FlatFwd.Normalize(),
-		FVector(1.0,0.0,0.0) ,	FColor::Blue , false, -1, 0, 1);
-
+	 FlatFwd.Roll =  R22Heli_Pawn->GetActorRotation().Roll;
+	 FlatFwd.Yaw =  R22Heli_Pawn->GetActorRotation().Yaw;
+	 FlatFwd.Pitch = 0.0f;
+	//
+	// FlatFwd.Normalize();
+	//
+	R22Heli_Pawn->ForwardArrow->SetWorldRotation(FRotator(FlatFwd));
 
 	//calculate flat right
 
