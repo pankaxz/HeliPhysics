@@ -63,7 +63,7 @@ protected:
 	FRotator FlatFwd;
 
 	UPROPERTY()
-	FVector FlatRight;
+	FRotator FlatRight;
 	
 public:	
 	// Called every frame

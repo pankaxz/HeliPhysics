@@ -87,17 +87,20 @@ void UHeliCharacteristics::HandlePedals(AR22Heli_Pawn* R22Heli_Pawn)
 void UHeliCharacteristics::CalculateLevel(AR22Heli_Pawn* R22Heli_Pawn)
 {
 	//calculate the flat forward
-	 FlatFwd.Roll =  R22Heli_Pawn->GetActorRotation().Roll;
-	 FlatFwd.Yaw =  R22Heli_Pawn->GetActorRotation().Yaw;
-	 FlatFwd.Pitch = 0.0f;
-	//
-	// FlatFwd.Normalize();
-	//
-	R22Heli_Pawn->ForwardArrow->SetWorldRotation(FRotator(FlatFwd));
+    FlatFwd = R22Heli_Pawn->GetActorForwardVector().Rotation();
+    FlatFwd.Pitch = 0.0f;
+	FlatFwd.Normalize();
+	R22Heli_Pawn->ForwardArrow->SetWorldRotation(FRotator(FlatFwd));	
 
 	//calculate flat right
+	FlatRight = R22Heli_Pawn->GetActorRightVector().Rotation();
+	FlatRight.Pitch = 0.0f;
+	FlatRight.Normalize();
+	R22Heli_Pawn->RightArrow->SetWorldRotation(FRotator(FlatRight));
 
+	
 	//calculate angles
+	
 }
 
 void UHeliCharacteristics::AutoLevel()
