@@ -24,7 +24,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="741f8425-4cc2-4f16-a1f1-e2ea537af92b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Content/Assets/Materials/Functions/Basic/BreakSet.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Assets/Materials/Functions/Basic/MakeSet.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Assets/Materials/Functions/Texture/Dye_SingleColor.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Assets/Materials/Functions/Texture/Tex_SimpleGrid.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Assets/Materials/Functions/UV/UV_ObjectScalable.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Assets/Materials/Functions/UV/UV_SetupGrid.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Materials/M_GridBase.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Materials/M_GridBase_Inst.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/T_BasicGrid_M.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/HP_Test/Art/Textures/T_BasicGrid_N.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HeliPhysics/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/BP_R22Heli_Pawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Test/Core/Blueprints/Pawn/BP_R22Heli_Pawn.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/HP_Test/Maps/TestMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/HP_Test/Maps/TestMap.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HeliPhysics/HeliCharacteristics.h" afterDir="false" />
@@ -48,6 +59,7 @@
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Engine/Private/Actor.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Core/Public/Math/Vector2D.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Engine/Classes/Engine/EngineTypes.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/ThirdParty/Crunch/include/crn_decomp.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Engine/Private/ActorConstruction.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Core/Public/Containers/Array.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/CoreUObject/Public/UObject/Object.h" root0="FORCE_HIGHLIGHTING" />
@@ -70,6 +82,7 @@
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Engine/Classes/Components/SceneComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Engine/Private/PrimitiveComponentPhysics.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Engine/Private/PhysicsEngine/BodyInstance.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Core/Public/Math/UnrealMathUtility.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/RHI/Public/RHIDefinitions.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/CoreUObject/Public/Templates/SubclassOf.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../Pankaj WORKSPACE/EPIC/UE_4.26/Engine/Source/Runtime/Engine/Classes/PhysicsEngine/BodyInstance.h" root0="FORCE_HIGHLIGHTING" />
@@ -463,6 +476,8 @@
       <workItem from="1608223504236" duration="6691000" />
       <workItem from="1608319234536" duration="5090000" />
       <workItem from="1608577182100" duration="9842000" />
+      <workItem from="1608613704798" duration="398000" />
+      <workItem from="1608658792110" duration="10588000" />
     </task>
     <task id="LOCAL-00001" summary="Added PawnController">
       <created>1606682743906</created>

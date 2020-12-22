@@ -22,7 +22,7 @@ void UHeliCharacteristics::UpdateCharacteristics(AR22Heli_Pawn* R22Heli_Pawn)
 
 	CalculateLevel(R22Heli_Pawn);
 	
-	AutoLevel();
+	AutoLevel(R22Heli_Pawn);
 
 	myActorQuat= GetOwner()->GetActorQuat();
 }
@@ -41,7 +41,6 @@ void UHeliCharacteristics::BeginPlay()
 
 void UHeliCharacteristics::HandleLift(AR22Heli_Pawn* R22Heli_Pawn)
 {
-	//todo : LIFT FORCE IS SKETCHY..COME BACK AGAIN
 	
 	FVector LiftForce = R22Heli_Pawn->GetActorUpVector() * (FMath::Abs(GetWorld()->GetGravityZ()) + MaxLiftForce) * 
         R22Heli_Pawn->GetPhysicsFBodyInstance()->GetBodyMass();
@@ -58,14 +57,7 @@ void UHeliCharacteristics::HandleLift(AR22Heli_Pawn* R22Heli_Pawn)
 //Cyclic force is bad
 void UHeliCharacteristics::HandleCyclic(AR22Heli_Pawn* R22Heli_Pawn)
 {
-	
-	// GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue,
-	// 	FString::Printf(TEXT("input X: %f"),R22Heli_Pawn->GetCyclicInput().X ));
-	//
-	// GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue,
-	// 	FString::Printf(TEXT("input Y: %f"),R22Heli_Pawn->GetCyclicInput().Y ));
 
-	
 	float CyclicXForce = R22Heli_Pawn->GetCyclicInput().X * CyclicForce;
 	R22Heli_Pawn->GetPhysicsFBodyInstance()->AddTorqueInRadians((myActorQuat.RotateVector(FVector::ForwardVector)* CyclicXForce),
 		true, true);
@@ -74,13 +66,25 @@ void UHeliCharacteristics::HandleCyclic(AR22Heli_Pawn* R22Heli_Pawn)
 	float CyclicYForce = R22Heli_Pawn->GetCyclicInput().Y * CyclicForce;
 	R22Heli_Pawn->GetPhysicsFBodyInstance()->AddTorqueInRadians((myActorQuat.RotateVector(FVector::RightVector)* CyclicYForce),
 		true, true);
+
+	
+	FVector ForwardVec = FlatFwd.Vector() * FwdDot;
+	FVector RightVec = FlatRight.Vector() * RightDot;
+
+	FVector TempCylicDirection = ForwardVec + RightVec;
+	FVector FinalCylicDirection = TempCylicDirection.GetClampedToSize(-1,1) * (CyclicForce * CyclicForceMultiplier);
+
+	R22Heli_Pawn->GetPhysicsFBodyInstance()->AddForce(FinalCylicDirection, true, false);
 }
 
 void UHeliCharacteristics::HandlePedals(AR22Heli_Pawn* R22Heli_Pawn)
 {
-	
-	R22Heli_Pawn->GetPhysicsFBodyInstance()->AddTorqueInRadians(FVector(0,0,R22Heli_Pawn->GetPedalInput() * TailForce),
-		true, true);
+	if(R22Heli_Pawn->GetPedalInput())
+	{
+		R22Heli_Pawn->GetPhysicsFBodyInstance()->AddTorqueInRadians(FVector(0,0,R22Heli_Pawn->GetPedalInput() * TailForce),
+        true, true);
+	}
+
 }
 
 //todo:: Debug line not working
@@ -100,11 +104,29 @@ void UHeliCharacteristics::CalculateLevel(AR22Heli_Pawn* R22Heli_Pawn)
 
 	
 	//calculate angles
+	FwdDot = FVector::DotProduct(R22Heli_Pawn->GetActorUpVector(), FlatFwd.Vector());
+	RightDot = FVector::DotProduct(R22Heli_Pawn->GetActorUpVector(), FlatRight.Vector());
+
+	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green,
+		FString::Printf(TEXT("Forward Dot %f"), FwdDot));
+
+	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green,
+		FString::Printf(TEXT("Right Dot %f"), RightDot));
 	
 }
 
-void UHeliCharacteristics::AutoLevel()
+void UHeliCharacteristics::AutoLevel(AR22Heli_Pawn* R22Heli_Pawn)
 {
+	float RightForce = -FwdDot * AutoLevelForce;
+	float ForwardForce = RightDot * AutoLevelForce;
+
+	//Todo :: auto levelling adding delta to the rotaion
+	R22Heli_Pawn->GetPhysicsFBodyInstance()->AddTorqueInRadians((myActorQuat.RotateVector(FVector::ForwardVector) * ForwardForce),
+        true, true);
+
+	R22Heli_Pawn->GetPhysicsFBodyInstance()->AddTorqueInRadians((myActorQuat.RotateVector(FVector::RightVector) * RightForce),
+        true, true);
+
 }
 
 

@@ -35,6 +35,9 @@ public:
 
 	FQuat myActorQuat;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
+	float AutoLevelForce = 2;
+
 	
 	
 protected:
@@ -57,13 +60,19 @@ protected:
     void CalculateLevel(AR22Heli_Pawn* R22Heli_Pawn);
 
 	UFUNCTION()
-    void AutoLevel();
+    void AutoLevel(AR22Heli_Pawn* R22Heli_Pawn);
 
 	UPROPERTY()
 	FRotator FlatFwd;
 
 	UPROPERTY()
 	FRotator FlatRight;
+
+	UPROPERTY()
+	float FwdDot;
+
+	UPROPERTY()
+	float RightDot;
 	
 public:	
 	// Called every frame
