@@ -33,10 +33,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
 	float CyclicForceMultiplier = 1000.0f;
 
-	FQuat myActorQuat;
+	FQuat PawnQuat;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
-	float AutoLevelForce = 2;
+	float AutoLevelForce = -2;
 
 	
 	
@@ -57,7 +57,7 @@ protected:
 	UHeliMainRotor* HeliMainRotor;
 
 	UFUNCTION()
-    void CalculateLevel(AR22Heli_Pawn* R22Heli_Pawn);
+    void CalculateAngle(AR22Heli_Pawn* R22Heli_Pawn);
 
 	UFUNCTION()
     void AutoLevel(AR22Heli_Pawn* R22Heli_Pawn);
