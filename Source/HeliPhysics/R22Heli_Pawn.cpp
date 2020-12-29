@@ -273,6 +273,11 @@ UStaticMeshComponent* AR22Heli_Pawn::GetHeliRootBody() const
 	return SM_RootBody;
 }
 
+USceneComponent* const AR22Heli_Pawn::GetSCGraphics() const
+{
+	return SC_Graphics;
+}
+
 FBodyInstance* AR22Heli_Pawn::GetPhysicsFBodyInstance()
 {
 	PhysicsFBodyHandler = HeliPhysicsHandler->GetBodyInstance();

@@ -46,6 +46,7 @@ public:
 	
 	FVector2D GetCyclicInput() const;
 	UStaticMeshComponent* GetHeliRootBody() const;
+	USceneComponent* const GetSCGraphics() const;
 	FBodyInstance* GetPhysicsFBodyInstance();
 
 	//Rotors 
