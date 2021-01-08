@@ -21,9 +21,19 @@ public:
 	UFUNCTION()
 	virtual void UpdateCharacteristics(AR22Heli_Pawn* R22Heli_Pawn);
 
+	//Collective
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
 	float MaxLiftForce = 100.0f;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
+	float AscendForce = 100.0f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
+	float DescentForce = 100.0f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
+	float IdleForce = 100.0f;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
 	float TailForce = 2.0f;
 	
@@ -73,11 +83,8 @@ protected:
 
 	UPROPERTY()
 	float RightDot;
-	
+
 public:	
-	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-
-
 	
 };

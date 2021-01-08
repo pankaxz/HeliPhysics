@@ -9,7 +9,6 @@ UHeliEngine::UHeliEngine()
 	PrimaryComponentTick.bCanEverTick = true;
 }
 
-
 void UHeliEngine::BeginPlay()
 {
 	Super::BeginPlay();

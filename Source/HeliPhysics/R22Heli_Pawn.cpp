@@ -215,8 +215,14 @@ void AR22Heli_Pawn::SetRawCollectiveInput(float AxisValue)
 
 void AR22Heli_Pawn::SetStickyCollectiveInput()
 {
-	StickyCollectiveInput += GetRawCollectiveInput() * -1.0 * GetWorld()->GetDeltaSeconds();
-	StickyCollectiveInput = FMath::Clamp(StickyCollectiveInput,0.0f,1.0f);
+	if(GetRawCollectiveInput())
+	{
+		StickyCollectiveInput += GetRawCollectiveInput() * GetWorld()->GetDeltaSeconds();
+		// StickyCollectiveInput = FMath::Clamp(StickyCollectiveInput,0.0f,1.0f);
+		StickyCollectiveInput = FMath::Clamp(StickyCollectiveInput,-1.0f,1.0f);
+	}
+
+	else StickyCollectiveInput = 0.0f;
 }
 
 void AR22Heli_Pawn::SetCyclicInput()
