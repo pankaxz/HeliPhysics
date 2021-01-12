@@ -9,16 +9,17 @@
 #include "Components/ArrowComponent.h"
 #include "Kismet/KismetMathLibrary.h"
 
+class AR22Heli_Pawn;
 UHeliCharacteristics::UHeliCharacteristics()
 {
 	PrimaryComponentTick.bCanEverTick = true;
 }
 
-void UHeliCharacteristics::UpdateCharacteristics(AR22Heli_Pawn* R22Heli_Pawn)
+void UHeliCharacteristics::UpdateCharacteristics()
 {
-	HandleLift(R22Heli_Pawn);
-	HandlePedals(R22Heli_Pawn);
-	HandleCyclic(R22Heli_Pawn);
+	HandleLift();
+	// HandlePedals(R22Heli_Pawn);
+	// HandleCyclic(R22Heli_Pawn);
 	// CalculateAngle(R22Heli_Pawn);
 	// AutoLevel(R22Heli_Pawn);
 
@@ -30,113 +31,50 @@ void UHeliCharacteristics::BeginPlay()
 {
 	Super::BeginPlay();
 
+	R22Heli_Pawn = Cast<AR22Heli_Pawn> (GetOwner());
 	HeliMainRotor = GetOwner()->FindComponentByClass<UHeliMainRotor>();
-	
 }
 
 
-void UHeliCharacteristics::HandleLift(AR22Heli_Pawn* R22Heli_Pawn)
+void UHeliCharacteristics::HandleLift()
 {
-	{
-		// R22Heli_Pawn->GetHeliRootBody()->AddForce(LiftForce * (FMath::Pow(NormalizedRPMs,2.0f))
-		//                                            * FMath::Pow(R22Heli_Pawn->GetStickyCollectiveInput(), 2.0f), NAME_None, false);
-	}
-
-	float NormalizedRPMs = HeliMainRotor->GetCurrentRPMs()/500.0f;
-	
 	FVector LiftForce;
+	float NormalizedRPMs = HeliMainRotor->GetCurrentRPMs()/500.0f;
+	IdleForce = (R22Heli_Pawn->GetHeliRootBody()->GetMass() * 980.0f);
 	
-	//Todo : Forces acting fine. Looks acceptable. Ascends Force need to act more fast.
 	if(R22Heli_Pawn->GetRawCollectiveInput() > 0)
 	{
-		LiftForce = R22Heli_Pawn->GetActorUpVector() * R22Heli_Pawn->GetRawCollectiveInput()  * AscendForce;
+		LiftForce = R22Heli_Pawn->GetActorUpVector() *  AscendForce * FMath::Pow( NormalizedRPMs, 2.0);
+
+		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green,
+			FString::Printf(TEXT("Ascend Force %f"), LiftForce.Size()));
 	}
-	//TODO : Idle needs to activate fast, maybe interp faster. 
-	if(R22Heli_Pawn->GetRawCollectiveInput() == 0)
-	{
-		LiftForce = R22Heli_Pawn->GetActorUpVector() * IdleForce ;
-	}
-	//TODO : Descent Force has to stop if landed
+
 	if(R22Heli_Pawn->GetRawCollectiveInput() < 0)
 	{
-		LiftForce = - R22Heli_Pawn->GetActorUpVector() * R22Heli_Pawn->GetRawCollectiveInput()  * DescentForce;
+		LiftForce = R22Heli_Pawn->GetActorUpVector() * DescentForce ;
+
+		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green,
+			FString::Printf(TEXT("Descent Force %f"), LiftForce.Size()));
 	}
 
-	//Todo : Angular Daming set tp 0.7 !! 
-	//
-	R22Heli_Pawn->GetHeliRootBody()->AddForce( LiftForce * NormalizedRPMs, NAME_None, false);
-
-
-	
-	/*if(R22Heli_Pawn->GetRawCollectiveInput() > 0) 
+	if(R22Heli_Pawn->GetRawCollectiveInput() == 0 && NormalizedRPMs > 0)
 	{
-		/*Ascend
-		 *Should apply force in upward direction
-		 #1#
+		LiftForce = R22Heli_Pawn->GetActorUpVector() * DownForce;
 		
-		FVector LiftForce = R22Heli_Pawn->GetActorUpVector() *  AscendForce;
-		
-		R22Heli_Pawn->GetHeliRootBody()->AddForce( LiftForce * NormalizedRPMs * R22Heli_Pawn->GetStickyCollectiveInput(), NAME_None, false);
-		// R22Heli_Pawn->GetHeliRootBody()->AddForce( LiftForce, NAME_None, false);
-
-		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Green,
-                            FString::Printf(TEXT("Ascending")));
-
-		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Green,
-                            FString::Printf(TEXT("LiftForce : %s"), *LiftForce.ToString()));
-
-		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Green,
-                            FString::Printf(TEXT("Actual LiftForce applied : %s"), *(LiftForce * NormalizedRPMs * R22Heli_Pawn->GetStickyCollectiveInput()).ToString()));
-
-		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Green,
-                    FString::Printf(TEXT("Gravity LiftForce : %f"), FMath::Abs(GetWorld()->GetGravityZ()) * (R22Heli_Pawn->GetHeliRootBody()->GetMass())));
-
-		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Green,
-                    FString::Printf(TEXT("Mass : %f"),R22Heli_Pawn->GetHeliRootBody()->GetMass()));
-
-		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Green,
-                    FString::Printf(TEXT("Velocity : %f"),(R22Heli_Pawn->GetHeliRootBody()->GetPhysicsLinearVelocity().Size())));
-
+		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green,
+			FString::Printf(TEXT("Down Force %f"), LiftForce.Size()));
 	}
-	
-	float Accel = R22Heli_Pawn->GetHeliRootBody()->GetPhysicsLinearVelocity().Size()/GetWorld()->GetDeltaSeconds();
 
-	if(R22Heli_Pawn->GetRawCollectiveInput() == 0) 
-	{
-		/*Idle
-		*
-		#1#
-		FVector DownwardForce = R22Heli_Pawn->GetActorUpVector() *
-				FMath::FInterpTo((R22Heli_Pawn->GetHeliRootBody()->GetMass() * Accel),
-					IdleForce, GetWorld()->GetDeltaSeconds(),
-					(IdleForce / R22Heli_Pawn->GetHeliRootBody()->GetMass() * Accel) * 100000 );
-		
-		R22Heli_Pawn->GetHeliRootBody()->AddForce(DownwardForce * NormalizedRPMs , NAME_None, false);
-		// R22Heli_Pawn->GetHeliRootBody()->AddForce( LiftForce, NAME_None, false);
-
-
-		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Green,
-        FString::Printf(TEXT("IDLE Force : %f "), DownwardForce.Z));
-		
-		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Green,
-		FString::Printf(TEXT("InterpSpeed : %f "), ((IdleForce / R22Heli_Pawn->GetHeliRootBody()->GetMass() * Accel))));
-		
-
-		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Green,
-        FString::Printf(TEXT("Acting Force : %f "),R22Heli_Pawn->GetHeliRootBody()->GetMass() * Accel));
-	}*/
-
-	// GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green,FString::Printf(TEXT("--------------------------------------------")));
-
+	R22Heli_Pawn->GetHeliRootBody()->AddForce( LiftForce * IdleForce , NAME_None, false);
 	
 }
-
 
 //TODO: Later
 
 ///--------------------------------------------------
 	//Cyclic force is bad
-void UHeliCharacteristics::HandleCyclic(AR22Heli_Pawn* R22Heli_Pawn)
+void UHeliCharacteristics::HandleCyclic()
 {
 
 	float CyclicXForce = R22Heli_Pawn->GetCyclicInput().X * CyclicForce;
@@ -171,7 +109,7 @@ void UHeliCharacteristics::HandleCyclic(AR22Heli_Pawn* R22Heli_Pawn)
 
 }
 
-void UHeliCharacteristics::HandlePedals(AR22Heli_Pawn* R22Heli_Pawn)
+void UHeliCharacteristics::HandlePedals()
 {
 	if(R22Heli_Pawn->GetPedalInput())
 	{
@@ -189,7 +127,7 @@ void UHeliCharacteristics::HandlePedals(AR22Heli_Pawn* R22Heli_Pawn)
 }
 
 //todo:: Debug line not working
-void UHeliCharacteristics::CalculateAngle(AR22Heli_Pawn* R22Heli_Pawn)
+void UHeliCharacteristics::CalculateAngle()
 {	
 	//old---
 	//calculate the flat forward
@@ -225,7 +163,7 @@ void UHeliCharacteristics::CalculateAngle(AR22Heli_Pawn* R22Heli_Pawn)
 
 }
 
-void UHeliCharacteristics::AutoLevel(AR22Heli_Pawn* R22Heli_Pawn)
+void UHeliCharacteristics::AutoLevel()
 {
 	float RightForce = -FwdDot * AutoLevelForce;
 	float ForwardForce = RightDot * AutoLevelForce;

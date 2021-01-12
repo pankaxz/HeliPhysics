@@ -19,8 +19,11 @@ public:
 	UHeliCharacteristics();
 
 	UFUNCTION()
-	virtual void UpdateCharacteristics(AR22Heli_Pawn* R22Heli_Pawn);
-
+	virtual void UpdateCharacteristics();
+	
+	UPROPERTY()
+	AR22Heli_Pawn* R22Heli_Pawn;
+	
 	//Collective
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
 	float MaxLiftForce = 100.0f;
@@ -32,7 +35,10 @@ public:
 	float DescentForce = 100.0f;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
-	float IdleForce = 100.0f;
+	float DownForce = 100.0f;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Characteristics - Physics Properties")
+	float IdleForce = 0.0f;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
 	float TailForce = 2.0f;
@@ -55,22 +61,22 @@ protected:
 	virtual void BeginPlay() override;
 
 	UFUNCTION()
-    virtual void HandleLift(AR22Heli_Pawn* R22Heli_Pawn);
+    virtual void HandleLift();
 
 	UFUNCTION()
-    virtual void HandleCyclic(AR22Heli_Pawn* R22Heli_Pawn);
+    virtual void HandleCyclic();
 
 	UFUNCTION()
-    virtual void HandlePedals(AR22Heli_Pawn* R22Heli_Pawn);
+    virtual void HandlePedals();
 
 	UPROPERTY()
 	UHeliMainRotor* HeliMainRotor;
 
 	UFUNCTION()
-    void CalculateAngle(AR22Heli_Pawn* R22Heli_Pawn);
+    void CalculateAngle();
 
 	UFUNCTION()
-    void AutoLevel(AR22Heli_Pawn* R22Heli_Pawn);
+    void AutoLevel();
 
 	UPROPERTY()
 	FRotator FlatFwd;

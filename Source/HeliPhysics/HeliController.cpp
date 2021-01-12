@@ -66,7 +66,7 @@ void UHeliController::HandleCharacteristics(AR22Heli_Pawn* R22Heli_Pawn)
 {
     if(HeliCharacteristics)
     {
-        HeliCharacteristics->UpdateCharacteristics(R22Heli_Pawn);
+        HeliCharacteristics->UpdateCharacteristics();
     }
     
 }
