@@ -20,8 +20,8 @@ void UHeliCharacteristics::UpdateCharacteristics()
 	HandleLift();
 	HandlePedals();
 	HandleCyclic();
-	// CalculateAngle();
-	// AutoLevel();
+	CalculateAngle();
+	AutoLevel();
 
 	PawnQuat = R22Heli_Pawn->GetActorQuat();
 }
@@ -91,7 +91,7 @@ void UHeliCharacteristics::HandleCyclic()
 
 	float CyclicXForce = R22Heli_Pawn->GetCyclicInput().X * CyclicForce;
 	float CyclicYForce = R22Heli_Pawn->GetCyclicInput().Y * CyclicForce;
-
+/*
 	R22Heli_Pawn->GetPhysicsFBodyInstance()->AddTorqueInRadians((PawnQuat.RotateVector(FVector::ForwardVector)* CyclicXForce),
 		true, true);
 	
@@ -103,7 +103,7 @@ void UHeliCharacteristics::HandleCyclic()
 
 	R22Heli_Pawn->GetHeliRootBody()->AddTorqueInRadians((PawnQuat.RotateVector(FVector::RightVector)* CyclicYForce),
 	NAME_None, true);
-	
+	*/
 	
 	R22Heli_Pawn->GetHeliRootBody()->AddTorqueInRadians(R22Heli_Pawn->GetHeliRootBody()->
 	GetRelativeTransform().TransformVector((FVector::ForwardVector) * CyclicXForce )
@@ -116,15 +116,15 @@ void UHeliCharacteristics::HandleCyclic()
 	FVector ForwardVec = FlatFwd.Vector() * FwdDot;
 	FVector RightVec = FlatRight.Vector() * RightDot;
 	
-	FVector FinalCylicDirection = ForwardVec + RightVec * (CyclicForce * CyclicForceMultiplier);
-	R22Heli_Pawn->GetHeliRootBody()->AddForce(FinalCylicDirection, NAME_None, true);
+	// FVector FinalCylicDirection = ForwardVec + RightVec * (CyclicForce * CyclicForceMultiplier);
+	// R22Heli_Pawn->GetHeliRootBody()->AddForce(FinalCylicDirection, NAME_None, true);
 
 }
 
 //todo:: Debug line not working
 void UHeliCharacteristics::CalculateAngle()
 {	
-	//old---
+	/*//old---
 	//calculate the flat forward
 	FlatFwd = R22Heli_Pawn->GetActorForwardVector().Rotation();
 	FlatFwd.Pitch = 0.0f;
@@ -138,7 +138,7 @@ void UHeliCharacteristics::CalculateAngle()
 	//calculate angles
 	FwdDot = FVector::DotProduct(R22Heli_Pawn->GetActorUpVector(), FlatFwd.Vector());
 	RightDot = FVector::DotProduct(R22Heli_Pawn->GetActorUpVector(), FlatRight.Vector());
-
+*/
 
 	//calculate the flat forward
 	FlatFwd = R22Heli_Pawn->GetSCGraphics()->GetForwardVector().Rotation();
@@ -163,7 +163,7 @@ void UHeliCharacteristics::AutoLevel()
 	float RightForce = -FwdDot * AutoLevelForce;
 	float ForwardForce = RightDot * AutoLevelForce;
 	
-	// Comment
+/*	// Comment
 	R22Heli_Pawn->GetPhysicsFBodyInstance()->AddTorqueInRadians((PawnQuat.RotateVector(FVector::ForwardVector) * ForwardForce ),
 	true, true);
 	
@@ -175,7 +175,7 @@ void UHeliCharacteristics::AutoLevel()
 	
 	R22Heli_Pawn->GetHeliRootBody()->AddTorqueInRadians((PawnQuat.RotateVector(FVector::RightVector) * RightForce ),
 	          NAME_None, true);
-
+*/
 	R22Heli_Pawn->GetHeliRootBody()->AddTorqueInRadians(R22Heli_Pawn->GetHeliRootBody()->
 	GetRelativeTransform().TransformVector((FVector::ForwardVector) * ForwardForce )
 	,NAME_None,true);
