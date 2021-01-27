@@ -43,6 +43,8 @@ public:
 	float GetRawCollectiveInput() const;
 	float GetStickyCollectiveInput() const;
 	
+	float GetLookRightInput() const;
+	float GetLookUpInput() const;
 	
 	FVector2D GetCyclicInput() const;
 	UStaticMeshComponent* GetHeliRootBody() const;
@@ -164,9 +166,20 @@ private:
 	void SetStickyCollectiveInput();
 	
 	void SetCyclicInput();
+
+	void SetLookRightInput(float AxisValue);
+	void SetLookUpInput(float AxisValue);
 	
 	//Input Variables
 	//
+	//
+	//Camera
+	UPROPERTY(VisibleAnywhere, Category = "InputTest")
+	float LookRightInput = 0.0f;
+	
+	UPROPERTY(VisibleAnywhere, Category = "InputTest")
+	float LookUpInput = 0.0f;
+	
 	//Horizontal Input - w s
 	float HorizontalInput = 0.0f;
 	
@@ -191,6 +204,7 @@ private:
 	
 	UPROPERTY(VisibleAnywhere, Category = "InputTest")
 	float StickyCollectiveInput = 0.0f;
+	
 	
 	// Cyclic input - X = Horizontal Input			
 	// Cyclic input - Y = Vertical Input			

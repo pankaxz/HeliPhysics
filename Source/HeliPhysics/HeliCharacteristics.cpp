@@ -41,31 +41,46 @@ void UHeliCharacteristics::HandleLift()
 	float NormalizedRPMs = HeliMainRotor->GetCurrentRPMs()/500.0f;
 	IdleForce = (R22Heli_Pawn->GetHeliRootBody()->GetMass() * 980.0f);
 	
+
+	if(Displacement < 0)
+	{
+		DescentForce = DeacceleratedDescentForce;
+		AscendForce = DeacceleratedAscendForce;
+		DownForce = DeacceleratedDownForce;
+	}
+	else
+	{
+		DescentForce = NormalDescentForce;
+		AscendForce = NormalAscendForce;
+		DownForce = NormalDownForce;
+	}
+		
 	if(R22Heli_Pawn->GetRawCollectiveInput() > 0)
 	{
 		LiftForce = R22Heli_Pawn->GetActorUpVector() *  AscendForce * FMath::Pow( NormalizedRPMs, 2.0);
 
-		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green,
-			FString::Printf(TEXT("Ascend Force %f"), LiftForce.Size()));
+		/*GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green,
+			FString::Printf(TEXT("Ascend Force %f"), LiftForce.Size()));*/
 	}
 
 	if(R22Heli_Pawn->GetRawCollectiveInput() < 0)
 	{
 		LiftForce = R22Heli_Pawn->GetActorUpVector() * DescentForce ;
 
-		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green,
-			FString::Printf(TEXT("Descent Force %f"), LiftForce.Size()));
+		/*GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green,
+			FString::Printf(TEXT("Descent Force %f"), LiftForce.Size()));*/
 	}
 
 	if(R22Heli_Pawn->GetRawCollectiveInput() == 0 && NormalizedRPMs > 0)
 	{
 		LiftForce = R22Heli_Pawn->GetActorUpVector() * DownForce;
 		
-		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green,
-			FString::Printf(TEXT("Down Force %f"), LiftForce.Size()));
+		// GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Green,
+		// 	FString::Printf(TEXT("Down Force %f"), LiftForce.Size()));
 	}
 
 	R22Heli_Pawn->GetHeliRootBody()->AddForce( LiftForce * IdleForce , NAME_None, false);
+	
 	
 }
 
@@ -196,5 +211,9 @@ void UHeliCharacteristics::AutoLevel()
 void UHeliCharacteristics::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+	
+	CurrVelocity = R22Heli_Pawn->GetHeliRootBody()->GetPhysicsLinearVelocity().Size();
+	Displacement = CurrVelocity - PrevVelocity;
+	PrevVelocity = CurrVelocity;
 }
 

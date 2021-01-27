@@ -175,6 +175,8 @@ void AR22Heli_Pawn::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 		PlayerInputComponent->BindAxis(TEXT("Throttle"), this, &AR22Heli_Pawn::SetRawThrottleInput);
 		PlayerInputComponent->BindAxis(TEXT("Collective"), this, &AR22Heli_Pawn::SetRawCollectiveInput);
 		PlayerInputComponent->BindAxis(TEXT("Pedal"), this, &AR22Heli_Pawn::SetPedalInput);
+		PlayerInputComponent->BindAxis(TEXT("LookRight"), this, &AR22Heli_Pawn::SetLookRightInput);
+		PlayerInputComponent->BindAxis(TEXT("LookUp"), this, &AR22Heli_Pawn::SetLookUpInput);
 	
 }
 //Setter Functions
@@ -231,6 +233,16 @@ void AR22Heli_Pawn::SetCyclicInput()
 	CyclicInput.X = HorizontalInput;
 }
 
+void AR22Heli_Pawn::SetLookRightInput(float AxisValue)
+{
+	LookRightInput = AxisValue;
+}
+
+void AR22Heli_Pawn::SetLookUpInput(float AxisValue)
+{
+	LookUpInput = AxisValue;
+}
+
 
 //Getter Functions
 
@@ -267,6 +279,16 @@ float AR22Heli_Pawn::GetRawCollectiveInput() const
 float AR22Heli_Pawn::GetStickyCollectiveInput() const
 {
 	return StickyCollectiveInput;
+}
+
+float AR22Heli_Pawn::GetLookRightInput() const
+{
+	return LookRightInput;
+}
+
+float AR22Heli_Pawn::GetLookUpInput() const
+{
+	return LookUpInput;
 }
 
 FVector2D AR22Heli_Pawn::GetCyclicInput() const

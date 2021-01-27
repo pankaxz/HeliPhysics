@@ -28,17 +28,44 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
 	float MaxLiftForce = 100.0f;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
+	UPROPERTY(VisibleAnywhere, BlueprintReadonly, Category="Characteristics - Physics Properties")
 	float AscendForce = 100.0f;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
+	UPROPERTY(VisibleAnywhere, BlueprintReadonly, Category="Characteristics - Physics Properties")
 	float DescentForce = 100.0f;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
+	UPROPERTY(VisibleAnywhere, BlueprintReadonly, Category="Characteristics - Physics Properties")
 	float DownForce = 100.0f;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Characteristics - Physics Properties")
 	float IdleForce = 0.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
+	float DeacceleratedAscendForce = 100.0f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
+	float DeacceleratedDescentForce = 100.0f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
+	float DeacceleratedDownForce = 100.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
+	float NormalAscendForce = 100.0f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
+	float NormalDescentForce = 100.0f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
+	float NormalDownForce = 100.0f;
+	
+	UPROPERTY()
+	float CurrVelocity = 0;
+
+	UPROPERTY()
+	float PrevVelocity = 0;
+
+	UPROPERTY()
+	float Displacement = 0 ;
 
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
