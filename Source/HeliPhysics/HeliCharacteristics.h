@@ -39,13 +39,18 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Characteristics - Physics Properties")
 	float IdleForce = 0.0f;
+
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
 	float TailForce = 2.0f;
-	
+
+	//cyclic 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
 	float CyclicForce = 2.0f;
-
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
+	float CyclicTailForce = 2.0f;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Characteristics - Physics Properties")
 	float CyclicForceMultiplier = 1000.0f;
 

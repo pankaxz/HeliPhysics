@@ -35,9 +35,6 @@ void UHeliCharacteristics::BeginPlay()
 	HeliMainRotor = GetOwner()->FindComponentByClass<UHeliMainRotor>();
 }
 
-
-
-
 void UHeliCharacteristics::HandleLift()
 {
 	FVector LiftForce;
@@ -88,9 +85,18 @@ void UHeliCharacteristics::HandlePedals()
 	//Cyclic force is bad
 void UHeliCharacteristics::HandleCyclic()
 {
-
 	float CyclicXForce = R22Heli_Pawn->GetCyclicInput().X * CyclicForce;
 	float CyclicYForce = R22Heli_Pawn->GetCyclicInput().Y * CyclicForce;
+
+	FVector CyclicHorizontal = (R22Heli_Pawn->GetHeliRootBody()->
+    GetRelativeTransform().TransformVector((FVector::ForwardVector)));
+	
+	FVector CyclicPedal = R22Heli_Pawn->GetHeliRootBody()->
+            GetRelativeTransform().TransformVector((FVector::UpVector.ZAxisVector));
+	
+	FVector CyclicPedalComboForce ;
+	
+	//also adding some pedal
 /*
 	R22Heli_Pawn->GetPhysicsFBodyInstance()->AddTorqueInRadians((PawnQuat.RotateVector(FVector::ForwardVector)* CyclicXForce),
 		true, true);
@@ -104,11 +110,10 @@ void UHeliCharacteristics::HandleCyclic()
 	R22Heli_Pawn->GetHeliRootBody()->AddTorqueInRadians((PawnQuat.RotateVector(FVector::RightVector)* CyclicYForce),
 	NAME_None, true);
 	*/
-	
-	R22Heli_Pawn->GetHeliRootBody()->AddTorqueInRadians(R22Heli_Pawn->GetHeliRootBody()->
-	GetRelativeTransform().TransformVector((FVector::ForwardVector) * CyclicXForce )
-	,NAME_None,true);
+	R22Heli_Pawn->GetHeliRootBody()->AddTorqueInRadians(CyclicHorizontal * CyclicXForce ,NAME_None,true);
+	R22Heli_Pawn->GetHeliRootBody()->AddTorqueInRadians(CyclicPedal * -CyclicXForce * CyclicTailForce , NAME_None,true);
 
+	
 	R22Heli_Pawn->GetHeliRootBody()->AddTorqueInRadians(R22Heli_Pawn->GetHeliRootBody()->
 	GetRelativeTransform().TransformVector((FVector::RightVector) * CyclicYForce )
 	,NAME_None,true);
@@ -116,8 +121,8 @@ void UHeliCharacteristics::HandleCyclic()
 	FVector ForwardVec = FlatFwd.Vector() * FwdDot;
 	FVector RightVec = FlatRight.Vector() * RightDot;
 	
-	// FVector FinalCylicDirection = ForwardVec + RightVec * (CyclicForce * CyclicForceMultiplier);
-	// R22Heli_Pawn->GetHeliRootBody()->AddForce(FinalCylicDirection, NAME_None, true);
+	FVector FinalCylicDirection = ForwardVec + RightVec * (CyclicForce * CyclicForceMultiplier);
+	R22Heli_Pawn->GetHeliRootBody()->AddForce(FinalCylicDirection, NAME_None, true);
 
 }
 
